@@ -1,0 +1,29 @@
+.nav {
+  background-color: $background-gray;
+  font-size: 0.8em;
+  margin: 1em;
+  max-width: calc(100% - 2em);
+  padding: 1em 0.1em;
+  width: 22em;
+
+  @media (min-width: 350px) {
+    font-size: 1em;
+    padding: 1.5em 1em 1em;
+  }
+
+  // .nav-a
+  &-a {
+    display: inline-block;
+    padding: 0.7em;
+
+    @media (min-width: 800px) {
+      // don't need as much padding on non-touch screen devices
+      padding: 0.3em;
+    }
+  }
+
+  // .nav-a__full-width
+  &-a__full-width {
+    width: 100%;
+  }
+}
