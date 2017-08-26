@@ -1,0 +1,28 @@
+/*******************
+ *  Header styles  *
+ *******************/
+
+.header {
+  align-items: flex-end;
+  background-color: $blue1;
+  display: flex;
+  font: {
+    family: 'GFS Didot', serif;
+    size: 0.75rem;
+  }
+  min-height: 120px;
+  padding: 2em 1em 1.5em;
+
+  // scale .header font-size
+  @media (min-width: 500px) {
+    font-size: 1rem;
+  }
+  @media (min-width: 750px) {
+    font-size: 1.25rem;
+  }
+
+  // .header-h1
+  &-h1 {
+    margin: 0 auto;
+  }
+}

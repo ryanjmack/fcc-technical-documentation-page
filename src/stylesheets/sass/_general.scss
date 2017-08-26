@@ -1,0 +1,21 @@
+/*******************
+ *  General rules  *
+ *******************/
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  color: #252525;
+  font: {
+    family: 'Open Sans', sans-serif;
+    size: 0.625rem;
+  }
+  line-height: 1.5;
+  width: 100vw;
+}
