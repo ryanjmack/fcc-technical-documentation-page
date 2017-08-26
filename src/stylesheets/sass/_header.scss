@@ -4,7 +4,7 @@
 
 .header {
   align-items: flex-end;
-  background-color: $blue1;
+  background-color: $blue2;
   display: flex;
   font: {
     family: 'GFS Didot', serif;
@@ -24,5 +24,7 @@
   // .header-h1
   &-h1 {
     margin: 0 auto;
+    max-width: $max-width;
+    width: 100%;
   }
 }
