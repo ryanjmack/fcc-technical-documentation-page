@@ -1,14 +1,18 @@
 .nav {
   background-color: $background-gray;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   margin: 1em;
   max-width: calc(100% - 2em);
   padding: 1em 0.1em;
-  width: 22em;
+  width: 100%;
 
   @media (min-width: 350px) {
-    font-size: 1em;
+    font-size: 1rem;
     padding: 1.5em 1em 1em;
+  }
+
+  @media (min-width: 35em) {
+    width: 22em;
   }
 
   // .nav__a
