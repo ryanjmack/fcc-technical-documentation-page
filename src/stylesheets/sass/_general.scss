@@ -36,7 +36,14 @@ li {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
   margin: 0 auto;
   max-width: $max-width;
   width: 100%;
+
+  @media (min-width: 56em) {
+    flex-direction: row;
+  }
 }
