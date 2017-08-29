@@ -11,8 +11,14 @@
     padding: 1.5em 1em 1em;
   }
 
-  @media (min-width: 35em) {
+  // When nav and article are displayed in a flex-row instead of flex-column
+  @media (min-width: 56em) {
     width: 22em;
+  }
+
+  //no need for margin-left when container reaches full size
+  @media (min-width: 89em) {
+    margin-left: 0;
   }
 
   // .nav__a
@@ -22,12 +28,54 @@
 
     @media (min-width: 800px) {
       // don't need as much padding on non-touch screen devices
-      padding: 0.3em;
+      padding: 0.6em 0.3em;
     }
   }
 
   // .nav__a--full-width
   &__a--full-width {
     width: 100%;
+  }
+
+  // .nav__h2
+  &__h2 {
+    font: {
+      family: inherit;
+      size: inherit;
+    }
+    margin: 0;
+    position: relative;
+
+    // .nav__h2 .fa
+    // This will be the toggle for the navigation for mobile
+    // has an id of nav-toggle
+    .fa {
+      bottom: -0.5em;
+      position: absolute;
+      padding: 1em;
+      right: 0;
+
+      // disable toggle button when container becomes large enough
+      @media (min-width: 56em) {
+        display: none;
+      }
+    }
+  }
+
+  // .nav__ol
+  &__ol {
+    padding-left: 10%;
+
+    // .nav__ol--first
+    // This will be the element that has its display toggled on mobile
+    &--first {
+      display: none;
+      padding-left: 0;
+
+      // **Always display the navigation menu when container is big enough
+      @media (min-width: 56em) {
+        display: block !important;
+      }
+    }
   }
 }
