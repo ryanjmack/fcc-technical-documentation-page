@@ -11,8 +11,8 @@
     padding: 1.5em 1em 1em;
   }
 
-  // .nav-a
-  &-a {
+  // .nav__a
+  &__a {
     display: inline-block;
     padding: 0.7em;
 
@@ -22,8 +22,8 @@
     }
   }
 
-  // .nav-a__full-width
-  &-a__full-width {
+  // .nav__a--full-width
+  &__a--full-width {
     width: 100%;
   }
 }

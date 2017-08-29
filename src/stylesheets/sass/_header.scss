@@ -13,7 +13,7 @@
   min-height: 120px;
   padding: 2em 1em 1.5em;
 
-  // scale .header font-size
+  // scale .header's font-size
   @media (min-width: 500px) {
     font-size: 1rem;
   }
@@ -21,8 +21,8 @@
     font-size: 1.25rem;
   }
 
-  // .header-h1
-  &-h1 {
+  // .header__h1
+  &__h1 {
     margin: 0 auto;
     max-width: $max-width;
     width: 100%;
