@@ -16,7 +16,7 @@ a {
 }
 
 body {
-  color: #333;
+  color: $text;
   font: {
     family: 'Open Sans', sans-serif;
   }
@@ -42,7 +42,7 @@ main {
   font-size: 1rem;
   margin: 0 auto;
   max-width: $max-width;
-  padding: 1em;
+  padding: 1.5em 1em;
   width: 100%;
 
   @media (min-width: 56em) {
@@ -51,6 +51,6 @@ main {
     justify-content: center;
   }
   @media (min-width: 78em) {
-    padding: 1em 0;
+    padding: 2em 0;
   }
 }
