@@ -9,8 +9,13 @@
 	<title></title>
 	<link href="https://fonts.googleapis.com/css?family=GFS+Didot|Inconsolata|Open+Sans" rel="stylesheet">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/stylesheets/css/normalize.css">
 	<link rel="stylesheet" href="/stylesheets/css/master.css">
+
+	<script src="js/general.js" defer></script>
+
+	</script>
 </head>
 
 <body>
@@ -19,33 +24,33 @@
 	</header>
 	<main>
 		<nav class="nav">
-			<a href="#" id="nav-toggle" class="nav__a--full-width">In This Article</a>
+			<h2 class="nav__h2">In This Article <i class="fa fa-arrow-right" id="nav-toggle" aria-hidden="true"></i></h2>
 
-			<ol>
+			<ol class="nav__ol--first">
 				<li><a href="#" class="nav__a">Block statement</a></li>
-				<ol>
+				<ol class="nav__ol">
 					<li><a href="#" class="nav__a">Example</a></li>
 				</ol>
 
 				<li><a href="#" class="nav__a">Conditional Statements</a></li>
-				<ol>
+				<ol class="nav__ol">
 					<li><a href="#" class="nav__a"><code>if...else</code> statements</a></li>
-					<ol>
+					<ol class="nav__ol">
 						<li><a href="#" class="nav__a">Falsy values</a></li>
 						<li><a href="#" class="nav__a">Example</a></li>
 					</ol>
 					<li><a href="#" class="nav__a">Switch statement</a></li>
-					<ol>
+					<ol class="nav__ol">
 						<li><a href="#" class="nav__a">Example</a></li>
 					</ol>
 				</ol>
 
 				<li><a href="#" class="nav__a">Exception handling statements</a></li>
-				<ol>
+				<ol class="nav__ol">
 					<li><a href="#" class="nav__a">Exception types</a></li>
 					<li><a href="#" class="nav__a"><code>Throw</code> statement</a></li>
 					<li><a href="#" class="nav__a"><code>try...catch</code> statement</a></li>
-					<ol>
+					<ol class="nav__ol">
 						<li><a href="#" class="nav__a">The <code>catch</code> block</a></li>
 						<li><a href="#" class="nav__a">The <code>finally</code> block</a></li>
 						<li><a href="#" class="nav__a">Nesting <code>try...catch</code> statements</a></li>
@@ -54,14 +59,14 @@
 				</ol>
 
 				<li><a href="#" class="nav__a">Promises</a></li>
-				<ol>
+				<ol class="nav__ol">
 					<li><a href="#" class="nav__a">Loading an image with XHR</a></li>
 				</ol>
 
 			</ol>
 		</nav>
-		<article class="">
-
+		<article class="article">
+			<p class="article__summary">JavaScript supports a compact set of statements, specifically control flow statements, that you can use to incorporate a great deal of interactivity in your application. This chapter provides an overview of these statements.</p>
 		</article>
 	</main>
 </body>
