@@ -1,19 +1,40 @@
 .article {
-  font-size: 1rem;
-  margin-top: 1em;
-  max-width: 53em;
-  padding: 0 1.5em 1em;
-  width: 100%;
+    font-size: 1rem;
+    margin-top: 1em;
+    max-width: 53em;
+    padding: 0 1.5em 1em;
+    width: 100%;
+    @media (min-width: 70em) {
+        padding: 0 6em 1em;
+    }
 
-  @media (min-width: 70em) {
-    padding: 0 6em 1em;
-  }
+    // .article__summary
+    &__summary {
+        border: 0.3em solid $blue12;
+        border-image: linear-gradient(to right, $blue13, $blue4) 1;
+        border-width: 0.3em 0;
+        font-size: 1.2em;
+        margin-bottom: 1.8em;
+        padding: 0.5em;
 
-  &__summary {
-    border: 0.3em solid $blue12;
-    border-image: linear-gradient(to right, $blue13, $blue4) 1;
-    border-width: 0.3em 0;
-    font-size: 1.2em;
-    padding: 0.5em;
-  }
+        @media (min-width: 56em) {
+            font-size: 1.5em;
+        }
+    }
+
+    // .article__p
+    &__p {}
+
+    &__h3 {
+        background-color: $text;
+        color: white;
+        display: inline-block;
+        font: {
+            family: 'GFS Didot', serif;
+            size: 1.7em;
+            weight: lighter;
+        }
+        margin: 0.7em 0 0.2em;
+        padding: 0 0.1em;
+    }
 }
