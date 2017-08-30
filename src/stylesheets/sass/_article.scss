@@ -1,0 +1,19 @@
+.article {
+  font-size: 1rem;
+  margin-top: 1em;
+  max-width: 53em;
+  padding: 0 1.5em 1em;
+  width: 100%;
+
+  @media (min-width: 70em) {
+    padding: 0 6em 1em;
+  }
+
+  &__summary {
+    border: 0.3em solid $blue12;
+    border-image: linear-gradient(to right, $blue13, $blue4) 1;
+    border-width: 0.3em 0;
+    font-size: 1.2em;
+    padding: 0.5em;
+  }
+}

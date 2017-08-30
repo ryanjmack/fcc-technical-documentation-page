@@ -1,7 +1,6 @@
 .nav {
   background-color: $background-gray;
   font-size: 0.8rem;
-  margin: 1em;
   max-width: calc(100% - 2em);
   padding: 1em 0.1em;
   width: 100%;
@@ -14,11 +13,6 @@
   // When nav and article are displayed in a flex-row instead of flex-column
   @media (min-width: 56em) {
     width: 22em;
-  }
-
-  //no need for margin-left when container reaches full size
-  @media (min-width: 89em) {
-    margin-left: 0;
   }
 
   // .nav__a
