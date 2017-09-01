@@ -1,7 +1,6 @@
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
 var cache = require('gulp-cache');
-var cssimport = require("gulp-cssimport");
 var cssnano = require('gulp-cssnano');
 var del = require('del');
 var gulp = require('gulp');
@@ -73,7 +72,6 @@ gulp.task('sass', function() {
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer())
         .pipe(sourcemaps.write('./'))
-        .pipe(cssimport())
         .pipe(gulp.dest('./src/stylesheets/css'))
         .pipe(browserSync.reload({
             stream: true
