@@ -31,16 +31,23 @@
     // .article__p
     &__p {}
 
+    // .article__h3
     &__h3 {
-        background-color: $text;
-        color: white;
         display: inline-block;
         font: {
             family: 'GFS Didot', serif;
             size: 1.7em;
-            weight: lighter;
         }
         margin: 0.7em 0 0.2em;
-        padding: 0 0.1em;
+    }
+
+    // .article__h3--inverted
+    &__h3--inverted {
+      // extend parent
+      @extend .article__h3;
+      background-color: $text;
+      color: white;
+      font-weight: lighter;
+      padding: 0 0.2em;
     }
 }
