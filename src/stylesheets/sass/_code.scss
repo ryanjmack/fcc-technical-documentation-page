@@ -1,0 +1,56 @@
+.code {
+  border-left: 0.5em solid $blue10;
+  font: {
+    family: monospace;
+    size: 1.3em;
+  }
+  margin: 2em 0;
+  padding: 0.7em 0.7em 0.7em 2.2em;
+  width: 100%;
+  overflow-x: auto;
+
+  // .code__example
+  &__example {
+    background-color: $background-gray;
+    font: {
+      size: 1.2em;
+      family: 'Inconsolata', monospace;
+    }
+
+    // .code__example--danger
+    &--danger {
+    }
+  }
+
+  // .code__syntax
+  &__syntax {
+    background-color: $blue3;
+  }
+
+  // .code__text
+  &__text {
+    font: {
+      family: 'Inconsolata', monospace;
+      size: 1.1em;
+    }
+  }
+}
+
+
+
+// code example colors
+.keyword {
+  color: $keyword;
+}
+
+.number {
+  color: $number;
+}
+
+.operator {
+  color: $operator;
+}
+
+.punctuation {
+  color: $punctuation;
+}

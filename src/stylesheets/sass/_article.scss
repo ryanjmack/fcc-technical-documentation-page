@@ -29,14 +29,16 @@
     }
 
     // .article__p
-    &__p {}
+    &__p {
+      font-size: 1em;
+    }
 
     // .article__h3
     &__h3 {
         display: inline-block;
         font: {
             family: 'GFS Didot', serif;
-            size: 1.7em;
+            size: 1.6em;
         }
         margin: 0.7em 0 0.2em;
     }
