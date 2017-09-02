@@ -99,8 +99,17 @@
   x<span class="operator">++</span><span class="punctuation">;
 }</span></pre> <!-- end pre -->
 
-		<p class="article__p">Here, <span class="code__text">{ x++; }</span> is the block statement.</p>
+			<p class="article__p">Here, <span class="code__text">{ x++; }</span> is the block statement.</p>
+			<p class="article__p"><strong>Important</strong>: JavaScript prior to ECMAScript2015 does <strong>not</strong> have block scope. Variables introduced within a block are scoped to the containing function or script, and the effects of setting them persist beyond the block itself. In other words, block statements do not define a scope. "Standalone" blocks in JavaScript can produce completely different results from what they would produce in C or Java. For example:</p>
 
+			<pre class="code code__example"><span class="keyword">var</span> x <span class="operator">=</span> <span class="number">1</span><span class="punctuation">;
+{</span>
+  <span class="keyword">var</span> x <span class="operator">=</span> <span class="number">2</span><span class="punctuation">;
+}</span>
+console.<span class="function">log</span><span class="punctuation">(</span>x<span class="punctuation">); // outputs 2</span></pre>
+
+			<p class="article__p">This outputs 2 because the <span class="code__text">var x</span> statement within the block is in the same scope as the <span class="code__text">var x</span> statement before the block. In C or Java, the equivalent code would have outputted 1.</p>
+			<p class="article__p">Starting with <span class="code__text">ECMAScript2015</span>, the <span class="code__text"><a href="#">let</a></span> variable declaration is block scoped. See the let reference page for more information.</p>
 		</article>
 	</main>
 </body>
