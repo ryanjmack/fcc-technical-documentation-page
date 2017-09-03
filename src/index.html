@@ -77,6 +77,7 @@
 			<p class="article__p">The <a href="#">JavaScript reference</a> contains exhaustive details about the statements in this chapter. The semicolon (;) character is used to separate statements in JavaScript code.</p>
 			<p class="article__p">Any JavaScript expression is also a statement. See <a href="#">Expressions and operators</a> for complete information about expressions.</p>
 
+			<!-- Blocks Statement -->
 			<h3 class="article__h3--inverted">Block Statement</h3>
 
 			<p class="article__p">The most basic statement is a block statement that is used to group statements. The block is delimited by a pair of curly brackets:</p>
@@ -91,25 +92,68 @@
   statement_n;
 }</pre> <!-- end pre -->
 
+			<!-- Example -->
 			<h3 class="article__h3">Example</h3>
 			<p class="article__p">Block statements are commonly used with control flow statements (e.g. <span class="code__text">if</span>, <span class="code__text">for</span>, <span class="code__text">while</span>).</p>
 
-			<!-- Pre -->
+			<!-- pre -->
 			<pre class="code code__example"><span class="keyword">while</span><span class="punctuation"> (</span>x <span class="operator"><</span> <span class="number">10</span><span class="punctuation">) {</span>
   x<span class="operator">++</span><span class="punctuation">;
-}</span></pre> <!-- end pre -->
+}</span></pre>
+			<!-- end pre -->
 
 			<p class="article__p">Here, <span class="code__text">{ x++; }</span> is the block statement.</p>
 			<p class="article__p"><strong>Important</strong>: JavaScript prior to ECMAScript2015 does <strong>not</strong> have block scope. Variables introduced within a block are scoped to the containing function or script, and the effects of setting them persist beyond the block itself. In other words, block statements do not define a scope. "Standalone" blocks in JavaScript can produce completely different results from what they would produce in C or Java. For example:</p>
 
+			<!-- pre -->
 			<pre class="code code__example"><span class="keyword">var</span> x <span class="operator">=</span> <span class="number">1</span><span class="punctuation">;
 {</span>
   <span class="keyword">var</span> x <span class="operator">=</span> <span class="number">2</span><span class="punctuation">;
 }</span>
 console.<span class="function">log</span><span class="punctuation">(</span>x<span class="punctuation">); // outputs 2</span></pre>
+			<!-- end pre -->
 
 			<p class="article__p">This outputs 2 because the <span class="code__text">var x</span> statement within the block is in the same scope as the <span class="code__text">var x</span> statement before the block. In C or Java, the equivalent code would have outputted 1.</p>
 			<p class="article__p">Starting with <span class="code__text">ECMAScript2015</span>, the <span class="code__text"><a href="#">let</a></span> variable declaration is block scoped. See the let reference page for more information.</p>
+
+			<!-- Conditional Statements -->
+			<h3 class="article__h3--inverted">Conditional Statements</h3>
+			<p class="article__p">A conditional statement is a set of commands that executes if a specified condition is true. JavaScript supports two conditional statements: <span class="code__text">if...else</span> and <span class="code__text">switch</span>.</p>
+			<h3 class="article__h3"><span class="code__text">if...else</span> statement</h3>
+			<p class="article__p">Use the <span class="code__text">if</span> statement to execute a statement if a logical condition is true. Use the optional <span class="code__text">else</span> clause to execute a statement if the condition is false. An <span class="code__text">if</span> statement looks as follows:</p>
+			<!-- pre -->
+			<pre class="code code__syntax">if (condition) {
+  statement_1;
+} else {
+  statement_2;
+}</pre>
+			<!-- end pre -->
+			<p class="article__p">Here the <span class="code__text">condition</span> can be any expression that evaluates to true or false. See <a href="#">Boolean</a> for an explanation of what evaluates to <span class="code__text">true</span> and <span class="code__text">false</span>. If <span class="code__text">condition</span> evaluates to true, <span class="code__text">statement_1</span> is executed; otherwise, <span class="code__text">statement_2</span> is executed. <span class="code__text">statement_1</span> and <span class="code__text">statement_2</span> can be any statement, including further nested <span class="code__text">if</span> statements.</p>
+			<p class="article__p">You may also compound the statements using <span class="code__text">else if</span> to have multiple conditions tested in sequence, as follows:</p>
+			<!-- pre -->
+			<pre class="code code__syntax">if (condition_1) {
+  statement_1;
+} else if (condition_2) {
+  statement_2;
+} else if (condition_n) {
+  statement_n;
+} else {
+  statement_last;
+}</pre>
+			<!-- end pre -->
+			<p class="article__p">In the case of multiple conditions only the first logical condition which evaluates to true will be executed. To execute multiple statements, group them within a block statement <span class="code__text">({ ... })</span>. In general, it's good practice to always use block statements, especially when nesting <span class="code__text">if</span> statements:</p>
+			<!-- pre -->
+			<pre class="code code__syntax">if (condition) {
+  statement_1_runs_if_condition_is_true;
+  statement_2_runs_if_condition_is_true;
+} else {
+  statement_3_runs_if_condition_is_false;
+  statement_4_runs_if_condition_is_false;
+}</pre>
+			<!-- end pre -->
+			<p class="article__p">It is advisable to not use simple assignments in a conditional expression, because the assignment can be confused with equality when glancing over the code. For example, do not use the following code:</p>
+
+
 		</article>
 	</main>
 </body>
