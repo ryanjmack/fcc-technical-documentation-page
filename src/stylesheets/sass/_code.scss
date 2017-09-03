@@ -19,6 +19,16 @@
 
     // .code__example--danger
     &--danger {
+      background-color: $danger-background;
+      border-color: $danger-border;
+      position: relative;
+
+      .fa-frown-o {
+        color: $danger-frown;
+        bottom: 0.5em;
+        position: absolute;
+        right: 0.2em;
+      }
     }
   }
 
@@ -39,6 +49,10 @@
 
 
 // code example colors
+.comment {
+  color: $comment;
+}
+
 .function {
   color: $function;
 }

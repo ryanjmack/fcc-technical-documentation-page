@@ -33,8 +33,13 @@ $text: #333;
 
 
 // code colors
+$comment: #708090;
 $keyword: #0077AA;
 $function: #DD4A68;
-$punctuation: #999;
 $number: #990055;
 $operator: #a67f59;
+$punctuation: #999;
+
+$danger-border: #e66465;
+$danger-background: #fceded;
+$danger-frown: #E03E3E;
