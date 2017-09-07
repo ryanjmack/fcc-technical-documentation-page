@@ -14,8 +14,6 @@
 	<link rel="stylesheet" href="/stylesheets/css/master.css">
 
 	<script src="js/general.js" defer></script>
-
-	</script>
 </head>
 
 <body>
@@ -24,7 +22,7 @@
 	</header>
 
 	<!-- main content -->
-	<main>
+	<main class="main">
 
 		<!-- nav with nested lists -->
 		<nav class="nav">
@@ -68,7 +66,8 @@
 				</ol>
 
 			</ol>
-		</nav>
+		</nav> <!-- End nav -->
+
 
 		<!-- Begin Article -->
 		<article class="article">
@@ -97,7 +96,7 @@
 			<p class="article__p">Block statements are commonly used with control flow statements (e.g. <span class="code__text">if</span>, <span class="code__text">for</span>, <span class="code__text">while</span>).</p>
 
 			<!-- pre -->
-			<pre class="code code__example"><span class="keyword">while</span><span class="punctuation"> (</span>x <span class="operator"><</span> <span class="number">10</span><span class="punctuation">) {</span>
+			<pre class="code code__example"><span class="keyword">while</span><span class="punctuation"> (</span>x <span class="operator"></span> <span class="number">10</span><span class="punctuation">) {</span>
   x<span class="operator">++</span><span class="punctuation">;
 }</span></pre>
 			<!-- end pre -->
@@ -121,6 +120,7 @@ console.<span class="function">log</span><span class="punctuation">(</span>x<spa
 			<p class="article__p">A conditional statement is a set of commands that executes if a specified condition is true. JavaScript supports two conditional statements: <span class="code__text">if...else</span> and <span class="code__text">switch</span>.</p>
 			<h3 class="article__h3"><span class="code__text">if...else</span> statement</h3>
 			<p class="article__p">Use the <span class="code__text">if</span> statement to execute a statement if a logical condition is true. Use the optional <span class="code__text">else</span> clause to execute a statement if the condition is false. An <span class="code__text">if</span> statement looks as follows:</p>
+
 			<!-- pre -->
 			<pre class="code code__syntax">if (condition) {
   statement_1;
@@ -128,8 +128,10 @@ console.<span class="function">log</span><span class="punctuation">(</span>x<spa
   statement_2;
 }</pre>
 			<!-- end pre -->
+
 			<p class="article__p">Here the <span class="code__text">condition</span> can be any expression that evaluates to true or false. See <a href="#">Boolean</a> for an explanation of what evaluates to <span class="code__text">true</span> and <span class="code__text">false</span>. If <span class="code__text">condition</span> evaluates to true, <span class="code__text">statement_1</span> is executed; otherwise, <span class="code__text">statement_2</span> is executed. <span class="code__text">statement_1</span> and <span class="code__text">statement_2</span> can be any statement, including further nested <span class="code__text">if</span> statements.</p>
 			<p class="article__p">You may also compound the statements using <span class="code__text">else if</span> to have multiple conditions tested in sequence, as follows:</p>
+
 			<!-- pre -->
 			<pre class="code code__syntax">if (condition_1) {
   statement_1;
@@ -141,7 +143,9 @@ console.<span class="function">log</span><span class="punctuation">(</span>x<spa
   statement_last;
 }</pre>
 			<!-- end pre -->
+
 			<p class="article__p">In the case of multiple conditions only the first logical condition which evaluates to true will be executed. To execute multiple statements, group them within a block statement <span class="code__text">({ ... })</span>. In general, it's good practice to always use block statements, especially when nesting <span class="code__text">if</span> statements:</p>
+
 			<!-- pre -->
 			<pre class="code code__syntax">if (condition) {
   statement_1_runs_if_condition_is_true;
@@ -151,14 +155,126 @@ console.<span class="function">log</span><span class="punctuation">(</span>x<spa
   statement_4_runs_if_condition_is_false;
 }</pre>
 			<!-- end pre -->
+
 			<p class="article__p">It is advisable to not use simple assignments in a conditional expression, because the assignment can be confused with equality when glancing over the code. For example, do not use the following code:</p>
+
 			<!-- pre DANGER -->
 			<pre class="code code__example--danger"><span class="keyword">if</span> <span class="punctuation">(</span>x <span class="operator">=</span> y<span class="punctuation">) {</span>
   <span class="comment">/* statements here */</span>
 <span class="punctuation">}</span><i class="fa fa-frown-o" aria-hidden="true"></i></pre>
 			<!-- end pre DANGER -->
 
+			<p class="article__p">If you need to use an assignment in a conditional expression, a common practice is to put additional parentheses around the assignment. For example:</p>
 
+			<!-- pre -->
+			<pre class="code code__example"><span class="keyword">if</span> <span class="punctuation">((</span>x <span class="operator">=</span> y<span class="punctuation">)) {
+  /* statements here */
+}</span></pre>
+			<!-- end pre -->
+
+			<h3 class="article__h3">Falsy Values</h3>
+			<p class="article__p">The following values evaluate to false (also known as Falsy values):</p>
+			<ul class="article__ul code__text">
+				<li>false</li>
+				<li>undefined</li>
+				<li>null</li>
+				<li>0</li>
+				<li>NaN</li>
+				<li><span class="sans-serif">the empty string(</span>""<span class="sans-serif">)</span></li>
+			</ul>
+			<p class="article__p">All other values, including all objects, evaluate to true when passed to a conditional statement.</p>
+			<p class="article__p">Do not confuse the primitive boolean values true and false with the true and false values of the <a href="#" class="code__text">Boolean object</a>. For example:</p>
+
+			<!-- pre -->
+			<pre class="code code__example"><span class="keyword">var</span> b <span class="operator">=</span> <span class="keyword">new</span> Boolean<span class="punctuation">(</span><span class="keyword">false</span><span class="punctuation">);</span>
+<span class="keyword">if</span> <span class="punctuation">(</span>b<span class="punctuation">) // this condition evaluates to true</span>
+<span class="keyword">if</span> <span class="punctuation">(</span>b <span class="operator">==</span> <span class="keyword">true</span><span class="punctuation">) // this condition evaluates to false</span></pre>
+			<!-- end pre -->
+
+			<h3 class="article__h3">Example</h3>
+			<p class="article__p">In the following example, the function checkData returns true if the number of characters in a Text object is three; otherwise, it displays an alert and returns false.</p>
+			<!-- pre -->
+			<pre class="code code__example"><span class="keyword">function</span> <span class="function">checkData</span><span class="punctuation">() {</span>
+  <span class="keyword">if</span> <span class="punctuation">(</span>document.form1.threeChar.value.length <span class="operator">==</span> <span class="number">3</span><span class="punctuation">) {</span>
+    <span class="keyword">return true</span><span class="punctuation">;
+  } </span><span class="keyword">else</span> <span class="punctuation">{</span>
+    <span class="function">alert</span><span class="punctuatino">(</span><span class="string">'Enter exactly three characters. '</span> <span class="operator">+</span>
+    document.form1.threeChar.value <span class="operator">+</span> <span class="string">' is not valid.'</span><span class="punctuation">);</span>
+    <span class="keyword">return false</span><span class="punctuation">;
+  }
+}</span></pre>
+			<!-- end pre -->
+
+			<h3 class="article__h3"><span class="code__text">switch</span> statement</h3>
+			<p class="article__p">A <span class="code__text">switch</span> statement allows a program to evaluate an expression and attempt to match the expression's value to a case label. If a match is found, the program executes the associated statement. A switch statement looks as follows:</p>
+			<!-- pre -->
+			<pre class="code code__syntax">switch (expression) {
+  case label_1:
+    statements_1
+    [break;]
+  case label_2:
+    statements_2
+    [break;]
+    ...
+  default:
+    statements_def
+    [break;]
+}</pre>
+			<!-- end pre -->
+
+			<p class="article__p">The program first looks for a case clause with a label matching the value of expression and then transfers control to that clause, executing the associated statements. If no matching label is found, the program looks for the optional <span class="code__text">default</span> clause, and if found, transfers control to that clause, executing the associated statements. If no <span class="code__text">default</span> clause is found, the program continues execution at the statement following the end of <span class="code__text">switch</span>. By convention, the <span class="code__text">default</span> clause is the last clause, but it does not need to be so.</p>
+			<p class="article__p">The optional break statement associated with each case clause ensures that the program breaks out of switch once the matched statement is executed and continues execution at the statement following switch. If break is omitted, the program continues execution at the next statement in the switch statement.</p>
+			<h3 class="article__h3">Example</h3>
+			<p class="article__p">In the following example, if <span class="code__text">fruittype</span> evaluates to "Bananas", the program matches the value with case "Bananas" and executes the associated statement. When <span class="code__text">break</span> is encountered, the program terminates <span class="code__text">switch</span> and executes the statement following <span class="code__text">switch</span>. If <span class="code__text">break</span> were omitted, the statement for case "Cherries" would also be executed.</p>
+
+			<!-- pre -->
+			<pre class="code code__example"><span class="keyword">switch</span> <span class="punctuation">(</span>fruittype<span class="punctuation">) {</span>
+  <span class="keyword">case</span> <span class="string">'Oranges'</span><span class="punctuation">:</span>
+    console<span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span><span class="string">'Oranges are $0.59 a pound.'</span><span class="punctuation">);</span>
+    <span class="keyword">break</span><span class="punctuation">;</span>
+  <span class="keyword">case</span> 'Apples'<span class="punctuation">:</span>
+    console<span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span><span class="string">'Apples are $0.32 a pound.'</span><span class="punctuation">);</span>
+    <span class="keyword">break</span><span class="punctuation">;</span>
+  <span class="keyword">case</span> 'Bananas'<span class="punctuation">:</span>
+    console<span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span><span class="string">'Bananas are $0.48 a pound.'</span><span class="punctuation">);</span>
+    <span class="keyword">break</span><span class="punctuation">;</span>
+  <span class="keyword">case</span> 'Cherries'<span class="punctuation">:</span>
+    console<span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span><span class="string">'Cherries are $3.00 a pound.'</span><span class="punctuation">);</span>
+    <span class="keyword">break</span><span class="punctuation">;</span>
+  <span class="keyword">case</span> 'Mangoes'<span class="punctuation">:</span>
+    console<span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span><span class="string">'Mangoes are $0.56 a pound.'</span><span class="punctuation">);</span>
+    <span class="keyword">break</span><span class="punctuation">;</span>
+  <span class="keyword">case</span> 'Papayas'<span class="punctuation">:</span>
+    console<span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span><span class="string">'Mangoes and papayas are $2.79 a pound.'</span><span class="punctuation">);</span>
+    <span class="keyword">break</span><span class="punctuation">;</span>
+  <span class="keyword">default</span><span class="punctuation">:</span>
+   console<span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span><span class="string">'Sorry, we are out of '</span> <span class="operator">+</span> fruittype <span class="operator">+</span> <span class="string">'.'</span><span class="punctuation">);</span>
+}
+console<span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span><span class="string">"Is there anything else you'd like?"</span><span class="punctuation">);</span></pre>
+			<!-- end pre-->
+
+			<h3 class="article__h3--inverted">Exception handling statements</h3>
+			<p class="article__p">You can throw exceptions using the throw statement and handle them using the try...catch statements.</p>
+			<ul class="article__ul">
+				<li><a href="#"><span class="code__text"> throw</span> statement</a></li>
+				<li><a href="#"><span class="code__text">try...catch</span> statement</a></li>
+			</ul>
+
+			<h3 class="article__h3">Exception types</h3>
+			<p class="article__p">Just about any object can be thrown in JavaScript. Nevertheless, not all thrown objects are created equal. While it is fairly common to throw numbers or strings as errors it is frequently more effective to use one of the exception types specifically created for this purpose:</p>
+			<ul class="article__ul">
+				<li><a href="#">ECMAScript exceptions</a></li>
+				<li><a href="#"><span class="code__text">DOMException</span> and <span class="code__text">DOMError</span></a></li>
+			</ul>
+
+			<h3 class="article__h3"><span class="code__text">throw</span> statement</h3>
+			<p class="article__p">Use the <span class="code__text">throw</span> statement to throw an exception. When you throw an exception, you specify the expression containing the value to be thrown:</p>
+			<pre class="code code__syntax">throw expression;</pre>
+			<p class="article__p">You may throw any expression, not just expressions of a specific type. The following code throws several exceptions of varying types:</p>
+			<pre class="code code__example"><span class="keyword">throw</span> <span class="string">'Error2'</span><span class="punctuation">;   // String type</span>
+<span class="keyword">throw</span> <span class="number">42</span><span class="punctuation">;         // Number type</span>
+<span class="keyword">throw true</span><span class="punctuation">;       // Boolean type</span>
+<span class="keyword">throw</span> <span class="punctuation">{</span>toString<span class="punctuation">:</span> <span class="keyword">function</span><span class="punctuation">() {</span> <span class="keyword">return</span> <span class="string">"I'm an object!"</span><span class="punctuation">; } };</span></pre>
 		</article>
 	</main>
 </body>

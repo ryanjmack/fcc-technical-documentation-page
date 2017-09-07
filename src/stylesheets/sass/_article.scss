@@ -52,4 +52,13 @@
       font-weight: lighter;
       padding: 0 0.2em;
     }
+
+    // .article__ul
+    &__ul {
+      @extend .code__text;
+
+      .sans-serif {
+        font-size: 1rem;
+      }
+    }
 }
