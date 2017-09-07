@@ -60,6 +60,11 @@
   &__ol {
     padding-left: 10%;
 
+    //.nav__ol li
+    li {
+      list-style: none;
+    }
+
     // .nav__ol--first
     // This will be the element that has its display toggled on mobile
     &--first {
