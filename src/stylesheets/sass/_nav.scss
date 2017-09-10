@@ -69,6 +69,7 @@
     // This will be the element that has its display toggled on mobile
     &--first {
       display: none;
+      list-style: none;
       padding-left: 0;
 
       // **Always display the navigation menu when container is big enough
