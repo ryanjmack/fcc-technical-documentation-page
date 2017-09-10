@@ -96,7 +96,7 @@
 			<p class="article__p">Block statements are commonly used with control flow statements (e.g. <span class="code__text">if</span>, <span class="code__text">for</span>, <span class="code__text">while</span>).</p>
 
 			<!-- pre -->
-			<pre class="code code__example"><span class="keyword">while</span><span class="punctuation"> (</span>x <span class="operator"></span> <span class="number">10</span><span class="punctuation">) {</span>
+			<pre class="code code__example"><span class="keyword">while</span><span class="punctuation"> (</span>x <span class="operator"><</span> <span class="number">10</span><span class="punctuation">) {</span>
   x<span class="operator">++</span><span class="punctuation">;
 }</span></pre>
 			<!-- end pre -->
@@ -271,10 +271,37 @@ console<span class="punctuation">.</span><span class="function">log</span><span 
 			<p class="article__p">Use the <span class="code__text">throw</span> statement to throw an exception. When you throw an exception, you specify the expression containing the value to be thrown:</p>
 			<pre class="code code__syntax">throw expression;</pre>
 			<p class="article__p">You may throw any expression, not just expressions of a specific type. The following code throws several exceptions of varying types:</p>
+			<!-- pre -->
 			<pre class="code code__example"><span class="keyword">throw</span> <span class="string">'Error2'</span><span class="punctuation">;   // String type</span>
 <span class="keyword">throw</span> <span class="number">42</span><span class="punctuation">;         // Number type</span>
 <span class="keyword">throw true</span><span class="punctuation">;       // Boolean type</span>
 <span class="keyword">throw</span> <span class="punctuation">{</span>toString<span class="punctuation">:</span> <span class="keyword">function</span><span class="punctuation">() {</span> <span class="keyword">return</span> <span class="string">"I'm an object!"</span><span class="punctuation">; } };</span></pre>
+			<!-- end pre -->
+
+			<p class="code__caution"><i class="fa fa-file-o" aria-hidden="true"></i><strong>Note</strong>: You can specify an object when you throw an exception. You can then reference the object's properties in the <span class="code__text">catch</span> block. The following example creates an object <span class="code__text">myUserException</span> of type <span class="code__text">UserException</span> and uses it in a throw statement.</p>
+
+			<!-- pre -->
+			<pre class="code code__example"><span class="punctuation">// Create an object type UserException</span>
+<span class="keyword">function</span> <span class="function">UserException</span><span class="punctuation">(</span>message<span class="punctuation">) {</span>
+  <span class="keyword">this</span><span class="punctuation">.</span>message <span class="operator">=</span> message<span class="punctuation">;</span>
+    <span class="keyword">this</span><span class="punctuation">.</span>name <span class="operator">=</span> <span class="string">'UserException'</span><span class="punctuation">;
+}
+
+// Make the exception convert to a pretty string when used as a string
+// (e.g. by the error console)</span>
+UserException.prototype.toString <span class="operator">=</span> <span class="keyword">function</span><span class="punctuation">() {</span>
+  <span class="keyword">return this</span><span class="punctuation">.</span>name <span class="operator">+</span> <span class="string">': "'</span> <span class="operator">+</span> <span class="keyword">this</span><span class="punctuation">.</span>message <span class="operator">+</span> <span class="string">'"'</span><span class="punctuation">;
+}
+
+// Create an instance of the object type and throw it</span>
+<span class="keyword">throw new</span> UserException<span class="punctuation">(</span><span class="string">'Value too high'</span><span class="punctuation">);</spn></pre>
+			<!-- end pre -->
+
+			<h3 class="article__h3"><span class="code__text">try...catch</span> statement</h3>
+			<p class="article__p">The <span class="code__text">try...catch</span> statement marks a block of statements to try, and specifies one or more responses should an exception be thrown. If an exception is thrown, the <span class="code__text">try...catch</span> statement catches it.</p>
+			<p class="article__p">The <span class="code__text">try...catch</span> statement consists of a <span class="code__text">try</span> block, which contains one or more statements, and a <span class="code__text">catch</span> block, containing statements that specify what to do if an exception is thrown in the <span class="code__text">try</span> block. That is, you want the <span class="code__text">try</span> block to succeed, and if it does not succeed, you want control to pass to the <span class="code__text">catch</span> block. If any statement within the <span class="code__text">try</span> block (or in a function called from within the <span class="code__text">try</span> block) throws an exception, control immediately shifts to the <span class="code__text">catch</span> block. If no exception is thrown in the <span class="code__text">try</span> block, the <span class="code__text">catch</span> block is skipped. The <span class="code__text">finally</span> block executes after the <span class="code__text">try</span> and <span class="code__text">catch</span> blocks execute but before the statements following the <span class="code__text">try...catch</span> statement.</p>
+			<p class="article__p">The following example uses a <span class="code__text">try...catch</span> statement. The example calls a function that retrieves a month name from an array based on the value passed to the function. If the value does not correspond to a month number (1-12), an exception is thrown with the value <span class="code__text">"InvalidMonthNo"</span>"InvalidMonthNo" and the statements in the <span class="code__text">catch</span> block set the <span class="code__text">monthName</span> variable to <span class="code__text">unknown</span>.</p>
+
 		</article>
 	</main>
 </body>

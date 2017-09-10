@@ -1,78 +1,92 @@
 .code {
-  border-left: 0.5em solid $blue10;
-  font: {
-    family: monospace;
-    size: 1.3em;
-  }
-  margin: 2em 0;
-  padding: 0.7em 0.7em 0.7em 2.2em;
-  width: 100%;
-  overflow-x: auto;
-
-  // .code__example
-  &__example {
-    background-color: $background-gray;
+    border-left: 0.5em solid $blue10;
     font: {
-      size: 1.2em;
-      family: 'Inconsolata', monospace;
+        family: monospace;
+        size: 1.23em;
+    }
+    margin: 2em 0;
+    padding: 0.7em 0.7em 0.7em 2.2em;
+    width: 100%;
+    overflow-x: auto;
+
+    // .code__example
+    &__example {
+        background-color: $background-gray;
+        font: {
+            size: 1.08em;
+            family: 'Inconsolata', monospace;
+        }
+
+        // .code__example--danger
+        &--danger {
+            background-color: $danger-background;
+            border-color: $danger-border;
+            position: relative;
+
+            .fa-frown-o {
+                color: $danger-frown;
+                bottom: 0.5em;
+                position: absolute;
+                right: 0.2em;
+            }
+        }
     }
 
-    // .code__example--danger
-    &--danger {
-      background-color: $danger-background;
-      border-color: $danger-border;
+    // .code__syntax
+    &__syntax {
+        background-color: $blue3;
+    }
+
+    // .code__text
+    &__text {
+        background-color: $background-gray;
+        font: {
+            family: 'Inconsolata', monospace;
+            size: 1.1em;
+        }
+        padding: 0.1em 0.2em;
+    }
+
+    // .code__caution
+    &__caution {
+      background-color: $caution-background;
+      border-left: 0.5em solid $caution-border;
+      padding: 0.7em 0.7em 0.7em 2.2em;
       position: relative;
 
-      .fa-frown-o {
-        color: $danger-frown;
-        bottom: 0.5em;
+      & i {
+        left: 1em;
         position: absolute;
-        right: 0.2em;
+        top: 1em;
+        transform: rotate(180deg) scaleX(-1);
       }
     }
-  }
-
-  // .code__syntax
-  &__syntax {
-    background-color: $blue3;
-  }
-
-  // .code__text
-  &__text {
-    font: {
-      family: 'Inconsolata', monospace;
-      size: 1.1em;
-    }
-  }
 }
-
-
-
 // code example colors
 .comment {
-  color: $comment;
+    color: $comment;
 }
 
 .function {
-  color: $function;
+    color: $function;
 }
 
 .keyword {
-  color: $keyword;
+    color: $keyword;
 }
 
 .number {
-  color: $number;
+    color: $number;
 }
 
 .operator {
-  color: $operator;
+    color: $operator;
 }
 
 .punctuation {
-  color: $punctuation;
+    color: $punctuation;
 }
 
 .string {
-  color: $string;
+    color: $string;
 }
