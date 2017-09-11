@@ -6,7 +6,7 @@
 	<meta name="author" content="Ryan Mack">
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title></title>
+	<title>Control Flow and Error Handling</title>
 	<link href="https://fonts.googleapis.com/css?family=GFS+Didot|Inconsolata|Open+Sans" rel="stylesheet">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,43 +30,58 @@
 
 			<ol class="nav__ol--first">
 				<li><a href="#" class="nav__a">Block statement</a></li>
-				<ol class="nav__ol">
-					<li><a href="#" class="nav__a">Example</a></li>
-				</ol>
-
+				<li>
+					<ol class="nav__ol">
+						<li><a href="#" class="nav__a">Example</a></li>
+					</ol>
+				</li>
 				<li><a href="#" class="nav__a">Conditional Statements</a></li>
-				<ol class="nav__ol">
-					<li><a href="#" class="nav__a"><code>if...else</code> statements</a></li>
+				<li>
 					<ol class="nav__ol">
-						<li><a href="#" class="nav__a">Falsy values</a></li>
-						<li><a href="#" class="nav__a">Example</a></li>
+						<li><a href="#" class="nav__a"><code>if...else</code> statements</a></li>
+						<li>
+							<ol class="nav__ol">
+								<li><a href="#" class="nav__a">Falsy values</a></li>
+								<li><a href="#" class="nav__a">Example</a></li>
+							</ol>
+						</li>
+						<li><a href="#" class="nav__a">Switch statement</a></li>
+						<li>
+							<ol class="nav__ol">
+								<li><a href="#" class="nav__a">Example</a></li>
+							</ol>
+						</li>
 					</ol>
-					<li><a href="#" class="nav__a">Switch statement</a></li>
-					<ol class="nav__ol">
-						<li><a href="#" class="nav__a">Example</a></li>
-					</ol>
-				</ol>
+				</li>
 
 				<li><a href="#" class="nav__a">Exception handling statements</a></li>
-				<ol class="nav__ol">
-					<li><a href="#" class="nav__a">Exception types</a></li>
-					<li><a href="#" class="nav__a"><code>Throw</code> statement</a></li>
-					<li><a href="#" class="nav__a"><code>try...catch</code> statement</a></li>
+
+				<li>
 					<ol class="nav__ol">
-						<li><a href="#" class="nav__a">The <code>catch</code> block</a></li>
-						<li><a href="#" class="nav__a">The <code>finally</code> block</a></li>
-						<li><a href="#" class="nav__a">Nesting <code>try...catch</code> statements</a></li>
+						<li><a href="#" class="nav__a">Exception types</a></li>
+						<li><a href="#" class="nav__a"><code>Throw</code> statement</a></li>
+						<li><a href="#" class="nav__a"><code>try...catch</code> statement</a></li>
+						<li>
+							<ol class="nav__ol">
+								<li><a href="#" class="nav__a">The <code>catch</code> block</a></li>
+								<li><a href="#" class="nav__a">The <code>finally</code> block</a></li>
+								<li><a href="#" class="nav__a">Nesting <code>try...catch</code> statements</a></li>
+							</ol>
+						</li>
+						<li><a href="#" class="nav__a">Utilizing <code>Error</code> objects</a></li>
 					</ol>
-					<li><a href="#" class="nav__a">Utilizing <code>Error</code> objects</a></li>
-				</ol>
+				</li>
 
 				<li><a href="#" class="nav__a">Promises</a></li>
-				<ol class="nav__ol">
-					<li><a href="#" class="nav__a">Loading an image with XHR</a></li>
-				</ol>
 
+				<li>
+					<ol class="nav__ol">
+						<li><a href="#" class="nav__a">Loading an image with XHR</a></li>
+					</ol>
+				</li>
 			</ol>
-		</nav> <!-- End nav -->
+		</nav>
+		<!-- End nav -->
 
 
 		<!-- Begin Article -->
@@ -89,7 +104,8 @@
   .
   .
   statement_n;
-}</pre> <!-- end pre -->
+}</pre>
+			<!-- end pre -->
 
 			<!-- Example -->
 			<h3 class="article__h3">Example</h3>
@@ -102,7 +118,8 @@
 			<!-- end pre -->
 
 			<p class="article__p">Here, <span class="code__text">{ x++; }</span> is the block statement.</p>
-			<p class="article__p"><strong>Important</strong>: JavaScript prior to ECMAScript2015 does <strong>not</strong> have block scope. Variables introduced within a block are scoped to the containing function or script, and the effects of setting them persist beyond the block itself. In other words, block statements do not define a scope. "Standalone" blocks in JavaScript can produce completely different results from what they would produce in C or Java. For example:</p>
+			<p class="article__p"><strong>Important</strong>: JavaScript prior to ECMAScript2015 does <strong>not</strong> have block scope. Variables introduced within a block are scoped to the containing function or script, and the effects of setting them persist beyond the block
+				itself. In other words, block statements do not define a scope. "Standalone" blocks in JavaScript can produce completely different results from what they would produce in C or Java. For example:</p>
 
 			<!-- pre -->
 			<pre class="code code__example"><span class="keyword">var</span> x <span class="operator">=</span> <span class="number">1</span><span class="punctuation">;
@@ -119,7 +136,7 @@ console.<span class="function">log</span><span class="punctuation">(</span>x<spa
 			<h3 class="article__h3--inverted">Conditional Statements</h3>
 			<p class="article__p">A conditional statement is a set of commands that executes if a specified condition is true. JavaScript supports two conditional statements: <span class="code__text">if...else</span> and <span class="code__text">switch</span>.</p>
 			<h3 class="article__h3"><span class="code__text">if...else</span> statement</h3>
-			<p class="article__p">Use the <span class="code__text">if</span> statement to execute a statement if a logical condition is true. Use the optional <span class="code__text">else</span> clause to execute a statement if the condition is false. An <span class="code__text">if</span> statement looks as follows:</p>
+			<p class="article__p">Use the <span class="code__text">if</span> statement to execute a statement if a logical condition is true. Use the optional <span class="code__text">else</span> clause to execute a statement if the condition is false. An <span class="code__text">if</span>				statement looks as follows:</p>
 
 			<!-- pre -->
 			<pre class="code code__syntax">if (condition) {
@@ -129,7 +146,8 @@ console.<span class="function">log</span><span class="punctuation">(</span>x<spa
 }</pre>
 			<!-- end pre -->
 
-			<p class="article__p">Here the <span class="code__text">condition</span> can be any expression that evaluates to true or false. See <a href="#">Boolean</a> for an explanation of what evaluates to <span class="code__text">true</span> and <span class="code__text">false</span>. If <span class="code__text">condition</span> evaluates to true, <span class="code__text">statement_1</span> is executed; otherwise, <span class="code__text">statement_2</span> is executed. <span class="code__text">statement_1</span> and <span class="code__text">statement_2</span> can be any statement, including further nested <span class="code__text">if</span> statements.</p>
+			<p class="article__p">Here the <span class="code__text">condition</span> can be any expression that evaluates to true or false. See <a href="#">Boolean</a> for an explanation of what evaluates to <span class="code__text">true</span> and <span class="code__text">false</span>.
+				If <span class="code__text">condition</span> evaluates to true, <span class="code__text">statement_1</span> is executed; otherwise, <span class="code__text">statement_2</span> is executed. <span class="code__text">statement_1</span> and <span class="code__text">statement_2</span>				can be any statement, including further nested <span class="code__text">if</span> statements.</p>
 			<p class="article__p">You may also compound the statements using <span class="code__text">else if</span> to have multiple conditions tested in sequence, as follows:</p>
 
 			<!-- pre -->
@@ -144,7 +162,8 @@ console.<span class="function">log</span><span class="punctuation">(</span>x<spa
 }</pre>
 			<!-- end pre -->
 
-			<p class="article__p">In the case of multiple conditions only the first logical condition which evaluates to true will be executed. To execute multiple statements, group them within a block statement <span class="code__text">({ ... })</span>. In general, it's good practice to always use block statements, especially when nesting <span class="code__text">if</span> statements:</p>
+			<p class="article__p">In the case of multiple conditions only the first logical condition which evaluates to true will be executed. To execute multiple statements, group them within a block statement <span class="code__text">({ ... })</span>. In general, it's good practice
+				to always use block statements, especially when nesting <span class="code__text">if</span> statements:</p>
 
 			<!-- pre -->
 			<pre class="code code__syntax">if (condition) {
@@ -206,7 +225,8 @@ console.<span class="function">log</span><span class="punctuation">(</span>x<spa
 			<!-- end pre -->
 
 			<h3 class="article__h3"><span class="code__text">switch</span> statement</h3>
-			<p class="article__p">A <span class="code__text">switch</span> statement allows a program to evaluate an expression and attempt to match the expression's value to a case label. If a match is found, the program executes the associated statement. A switch statement looks as follows:</p>
+			<p class="article__p">A <span class="code__text">switch</span> statement allows a program to evaluate an expression and attempt to match the expression's value to a case label. If a match is found, the program executes the associated statement. A switch statement looks
+				as follows:</p>
 			<!-- pre -->
 			<pre class="code code__syntax">switch (expression) {
   case label_1:
@@ -222,10 +242,13 @@ console.<span class="function">log</span><span class="punctuation">(</span>x<spa
 }</pre>
 			<!-- end pre -->
 
-			<p class="article__p">The program first looks for a case clause with a label matching the value of expression and then transfers control to that clause, executing the associated statements. If no matching label is found, the program looks for the optional <span class="code__text">default</span> clause, and if found, transfers control to that clause, executing the associated statements. If no <span class="code__text">default</span> clause is found, the program continues execution at the statement following the end of <span class="code__text">switch</span>. By convention, the <span class="code__text">default</span> clause is the last clause, but it does not need to be so.</p>
-			<p class="article__p">The optional break statement associated with each case clause ensures that the program breaks out of switch once the matched statement is executed and continues execution at the statement following switch. If break is omitted, the program continues execution at the next statement in the switch statement.</p>
+			<p class="article__p">The program first looks for a case clause with a label matching the value of expression and then transfers control to that clause, executing the associated statements. If no matching label is found, the program looks for the optional <span class="code__text">default</span>				clause, and if found, transfers control to that clause, executing the associated statements. If no <span class="code__text">default</span> clause is found, the program continues execution at the statement following the end of <span class="code__text">switch</span>.
+				By convention, the <span class="code__text">default</span> clause is the last clause, but it does not need to be so.</p>
+			<p class="article__p">The optional break statement associated with each case clause ensures that the program breaks out of switch once the matched statement is executed and continues execution at the statement following switch. If break is omitted, the program continues
+				execution at the next statement in the switch statement.</p>
 			<h3 class="article__h3">Example</h3>
-			<p class="article__p">In the following example, if <span class="code__text">fruittype</span> evaluates to "Bananas", the program matches the value with case "Bananas" and executes the associated statement. When <span class="code__text">break</span> is encountered, the program terminates <span class="code__text">switch</span> and executes the statement following <span class="code__text">switch</span>. If <span class="code__text">break</span> were omitted, the statement for case "Cherries" would also be executed.</p>
+			<p class="article__p">In the following example, if <span class="code__text">fruittype</span> evaluates to "Bananas", the program matches the value with case "Bananas" and executes the associated statement. When <span class="code__text">break</span> is encountered, the program
+				terminates <span class="code__text">switch</span> and executes the statement following <span class="code__text">switch</span>. If <span class="code__text">break</span> were omitted, the statement for case "Cherries" would also be executed.</p>
 
 			<!-- pre -->
 			<pre class="code code__example"><span class="keyword">switch</span> <span class="punctuation">(</span>fruittype<span class="punctuation">) {</span>
@@ -261,7 +284,8 @@ console<span class="punctuation">.</span><span class="function">log</span><span 
 			</ul>
 
 			<h3 class="article__h3">Exception types</h3>
-			<p class="article__p">Just about any object can be thrown in JavaScript. Nevertheless, not all thrown objects are created equal. While it is fairly common to throw numbers or strings as errors it is frequently more effective to use one of the exception types specifically created for this purpose:</p>
+			<p class="article__p">Just about any object can be thrown in JavaScript. Nevertheless, not all thrown objects are created equal. While it is fairly common to throw numbers or strings as errors it is frequently more effective to use one of the exception types specifically
+				created for this purpose:</p>
 			<ul class="article__ul">
 				<li><a href="#">ECMAScript exceptions</a></li>
 				<li><a href="#"><span class="code__text">DOMException</span> and <span class="code__text">DOMError</span></a></li>
@@ -278,7 +302,8 @@ console<span class="punctuation">.</span><span class="function">log</span><span 
 <span class="keyword">throw</span> <span class="punctuation">{</span>toString<span class="punctuation">:</span> <span class="keyword">function</span><span class="punctuation">() {</span> <span class="keyword">return</span> <span class="string">"I'm an object!"</span><span class="punctuation">; } };</span></pre>
 			<!-- end pre -->
 
-			<p class="code__caution"><i class="fa fa-file-o" aria-hidden="true"></i><strong>Note</strong>: You can specify an object when you throw an exception. You can then reference the object's properties in the <span class="code__text">catch</span> block. The following example creates an object <span class="code__text">myUserException</span> of type <span class="code__text">UserException</span> and uses it in a throw statement.</p>
+			<p class="code__caution"><i class="fa fa-file-o" aria-hidden="true"></i><strong>Note</strong>: You can specify an object when you throw an exception. You can then reference the object's properties in the <span class="code__text">catch</span> block. The following example creates
+				an object <span class="code__text">myUserException</span> of type <span class="code__text">UserException</span> and uses it in a throw statement.</p>
 
 			<!-- pre -->
 			<pre class="code code__example"><span class="punctuation">// Create an object type UserException</span>
@@ -298,9 +323,14 @@ UserException.prototype.toString <span class="operator">=</span> <span class="ke
 			<!-- end pre -->
 
 			<h3 class="article__h3"><span class="code__text">try...catch</span> statement</h3>
-			<p class="article__p">The <span class="code__text">try...catch</span> statement marks a block of statements to try, and specifies one or more responses should an exception be thrown. If an exception is thrown, the <span class="code__text">try...catch</span> statement catches it.</p>
-			<p class="article__p">The <span class="code__text">try...catch</span> statement consists of a <span class="code__text">try</span> block, which contains one or more statements, and a <span class="code__text">catch</span> block, containing statements that specify what to do if an exception is thrown in the <span class="code__text">try</span> block. That is, you want the <span class="code__text">try</span> block to succeed, and if it does not succeed, you want control to pass to the <span class="code__text">catch</span> block. If any statement within the <span class="code__text">try</span> block (or in a function called from within the <span class="code__text">try</span> block) throws an exception, control immediately shifts to the <span class="code__text">catch</span> block. If no exception is thrown in the <span class="code__text">try</span> block, the <span class="code__text">catch</span> block is skipped. The <span class="code__text">finally</span> block executes after the <span class="code__text">try</span> and <span class="code__text">catch</span> blocks execute but before the statements following the <span class="code__text">try...catch</span> statement.</p>
-			<p class="article__p">The following example uses a <span class="code__text">try...catch</span> statement. The example calls a function that retrieves a month name from an array based on the value passed to the function. If the value does not correspond to a month number (1-12), an exception is thrown with the value <span class="code__text">"InvalidMonthNo"</span>"InvalidMonthNo" and the statements in the <span class="code__text">catch</span> block set the <span class="code__text">monthName</span> variable to <span class="code__text">unknown</span>.</p>
+			<p class="article__p">The <span class="code__text">try...catch</span> statement marks a block of statements to try, and specifies one or more responses should an exception be thrown. If an exception is thrown, the <span class="code__text">try...catch</span> statement catches
+				it.</p>
+			<p class="article__p">The <span class="code__text">try...catch</span> statement consists of a <span class="code__text">try</span> block, which contains one or more statements, and a <span class="code__text">catch</span> block, containing statements that specify what to
+				do if an exception is thrown in the <span class="code__text">try</span> block. That is, you want the <span class="code__text">try</span> block to succeed, and if it does not succeed, you want control to pass to the <span class="code__text">catch</span>				block. If any statement within the <span class="code__text">try</span> block (or in a function called from within the <span class="code__text">try</span> block) throws an exception, control immediately shifts to the <span class="code__text">catch</span>				block. If no exception is thrown in the <span class="code__text">try</span> block, the <span class="code__text">catch</span> block is skipped. The <span class="code__text">finally</span> block executes after the <span class="code__text">try</span>				and <span class="code__text">catch</span> blocks execute but before the statements following the <span class="code__text">try...catch</span> statement.</p>
+			<p class="article__p">The following example uses a <span class="code__text">try...catch</span> statement. The example calls a function that retrieves a month name from an array based on the value passed to the function. If the value does not correspond to a month number
+				(1-12), an exception is thrown with the value <span class="code__text">"InvalidMonthNo"</span>"InvalidMonthNo" and the statements in the <span class="code__text">catch</span> block set the <span class="code__text">monthName</span> variable to
+				<span
+								class="code__text">unknown</span>.</p>
 
 			<!-- pre -->
 			<pre class="code code__example"><span class="keyword">function</span> <span class="function">getMonthName</span><span class="punctuation">(</span>mo<span class="punctuation">) {</span>
@@ -331,7 +361,9 @@ UserException.prototype.toString <span class="operator">=</span> <span class="ke
   statements
 }</pre>
 			<!-- end pre -->
-			<p class="article__p">The <span class="code__text">catch</span> block specifies an identifier (<span class="code__text">catchID</span> in the preceding syntax) that holds the value specified by the <span class="code__text">throw</span> statement; you can use this identifier to get information about the exception that was thrown. JavaScript creates this identifier when the <span class="code__text">catch</span> block is entered; the identifier lasts only for the duration of the <span class="code__text">catch</span> block; after the <span class="code__text">catch</span> block finishes executing, the identifier is no longer available.</p>
+			<p class="article__p">The <span class="code__text">catch</span> block specifies an identifier (<span class="code__text">catchID</span> in the preceding syntax) that holds the value specified by the <span class="code__text">throw</span> statement; you can use this identifier
+				to get information about the exception that was thrown. JavaScript creates this identifier when the <span class="code__text">catch</span> block is entered; the identifier lasts only for the duration of the <span class="code__text">catch</span> block;
+				after the <span class="code__text">catch</span> block finishes executing, the identifier is no longer available.</p>
 			<p class="article__p">For example, the following code throws an exception. When the exception occurs, control transfers to the <span class="code__text">catch</span> block.</p>
 			<!-- pre -->
 			<pre class="code code__example"><span class="keyword">try</span> <span class="punctuation">{</span>
@@ -344,8 +376,9 @@ UserException.prototype.toString <span class="operator">=</span> <span class="ke
 			<!-- end pre -->
 
 			<h3 class="article__h3">The <span class="code__text">finally</span> block</h3>
-			<p class="article__p">The <span class="code__text">finally</span> block contains statements to execute after the <span class="code__text">try</span> and <span class="code__text">catch</span> blocks execute but before the statements following the <span class="code__text">try...catch</span> statement. The <span class="code__text">finally</span> block executes whether or not an exception is thrown. If an exception is thrown, the statements in the <span class="code__text">finally</span> block execute even if no <span class="code__text">finally</span> block handles the exception.</p>
-			<p class="article__p">You can use the <span class="code__text">finally</span> block to make your script fail gracefully when an exception occurs; for example, you may need to release a resource that your script has tied up. The following example opens a file and then executes statements that use the file (server-side JavaScript allows you to access files). If an exception is thrown while the file is open, the <span class="code__text">finally</span> block closes the file before the script fails.</p>
+			<p class="article__p">The <span class="code__text">finally</span> block contains statements to execute after the <span class="code__text">try</span> and <span class="code__text">catch</span> blocks execute but before the statements following the <span class="code__text">try...catch</span>				statement. The <span class="code__text">finally</span> block executes whether or not an exception is thrown. If an exception is thrown, the statements in the <span class="code__text">finally</span> block execute even if no <span class="code__text">finally</span>				block handles the exception.</p>
+			<p class="article__p">You can use the <span class="code__text">finally</span> block to make your script fail gracefully when an exception occurs; for example, you may need to release a resource that your script has tied up. The following example opens a file and then executes
+				statements that use the file (server-side JavaScript allows you to access files). If an exception is thrown while the file is open, the <span class="code__text">finally</span> block closes the file before the script fails.</p>
 			<!-- pre -->
 			<pre class="code code__example"><span class="function">openMyFile</span><span class="punctuation">();</span>
 <span class="keyword">try</span> <span class="punctuation">{</span>
@@ -357,7 +390,8 @@ UserException.prototype.toString <span class="operator">=</span> <span class="ke
 }</span></pre>
 			<!-- end pre -->
 
-			<p class="article__p">If the <span class="code__text">finally</span> block returns a value, this value becomes the return value of the entire <span class="code__text">try-catch-finally</span> production, regardless of any <span class="code__text">return</span> statements in the <span class="code__text">try</span> and <span class="code__text">catch</span> blocks:</p>
+			<p class="article__p">If the <span class="code__text">finally</span> block returns a value, this value becomes the return value of the entire <span class="code__text">try-catch-finally</span> production, regardless of any <span class="code__text">return</span> statements
+				in the <span class="code__text">try</span> and <span class="code__text">catch</span> blocks:</p>
 			<!-- pre -->
 			<pre class="code code__example"><span class="keyword">function</span> <span class="function">f</span><span class="punctuation">() {</span>
   <span class="keyword">try</span> <span class="punctuation">{</span>
@@ -408,10 +442,11 @@ UserException.prototype.toString <span class="operator">=</span> <span class="ke
 			<!-- end pre -->
 
 			<h3 class="article__h3">Nesting try...catch statements</h3>
-			<p class="article__p">You can nest one or more <span class="code__text">try...catch statements</span>. If an inner <span class="code__text">try...catch</span> statement does not have a <span class="code__text">catch</span> block, it needs to have a <span class="code__text">finally</span> block and the enclosing <span class="code__text">try...catch</span> statement's <span class="code__text">catch</span> block is checked for a match. For more information, see <a href="#">nested try-blocks</a> on the <span class="code__text"><a href="#">try...catch</a></span> reference page.</p>
+			<p class="article__p">You can nest one or more <span class="code__text">try...catch statements</span>. If an inner <span class="code__text">try...catch</span> statement does not have a <span class="code__text">catch</span> block, it needs to have a <span class="code__text">finally</span>				block and the enclosing <span class="code__text">try...catch</span> statement's <span class="code__text">catch</span> block is checked for a match. For more information, see <a href="#">nested try-blocks</a> on the <span class="code__text"><a href="#">try...catch</a></span>				reference page.</p>
 
 			<h3 class="article__h3">Utilizing <span class="code__text">Error</span> objects</h3>
-			<p class="article__p">Depending on the type of error, you may be able to use the 'name' and 'message' properties to get a more refined message. 'name' provides the general class of Error (e.g., 'DOMException' or 'Error'), while 'message' generally provides a more succinct message than one would get by converting the error object to a string.</p>
+			<p class="article__p">Depending on the type of error, you may be able to use the 'name' and 'message' properties to get a more refined message. 'name' provides the general class of Error (e.g., 'DOMException' or 'Error'), while 'message' generally provides a more succinct
+				message than one would get by converting the error object to a string.</p>
 			<p class="article__p">If you are throwing your own exceptions, in order to take advantage of these properties (such as if your catch block doesn't discriminate between your own exceptions and system ones), you can use the Error constructor. For example:</p>
 			<!-- pre -->
 			<pre class="code code__example"><span class="keyword">function</span> <span class="function">doSomethingErrorProne</span><span class="punctuation">() {</span>
@@ -442,7 +477,8 @@ UserException.prototype.toString <span class="operator">=</span> <span class="ke
 			<img src="images/promises.png" class="article__img" alt="A flowchart depicting differing states of a promise in JavaScript">
 
 			<h3 class="article__h3">Loading an image with XHR</h3>
-			<p class="article__p">A simple example using <span class="code__text">Promise</span> and <a href="#">XMLHttpRequest</a> to load an image is available at the MDN GitHub <a href="#">js-examples repository</a>. You can also <a href="#">see it in action</a>. Each step is commented and allows you to follow the Promise and XHR architecture closely. Here is the uncommented version, showing the <span class="code__text">Promise</span> flow so that you can get an idea:</p>
+			<p class="article__p">A simple example using <span class="code__text">Promise</span> and <a href="#">XMLHttpRequest</a> to load an image is available at the MDN GitHub <a href="#">js-examples repository</a>. You can also <a href="#">see it in action</a>. Each step is commented
+				and allows you to follow the Promise and XHR architecture closely. Here is the uncommented version, showing the <span class="code__text">Promise</span> flow so that you can get an idea:</p>
 			<!-- pre -->
 			<pre class="code code__example"><span class="keyword">function</span> <span class="function">imgLoad</span><span class="punctuation">(</span>url<span class="punctuation">) {</span>
   <span class="keyword">return new</span> Promise<span class="punctuation">(</span><span class="keyword">function</span><span class="punctuation">(</span>resolve<span class="punctuation">,</span> reject<span class="punctuation">) {</span>
