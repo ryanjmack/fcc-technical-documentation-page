@@ -29,54 +29,54 @@
 			<h2 class="nav__h2">In This Article <i class="fa fa-arrow-right" id="nav-toggle" aria-hidden="true"></i></h2>
 
 			<ol class="nav__ol--first">
-				<li><a href="#" class="nav__a">Block statement</a></li>
+				<li><a href="#block" class="nav__a">Block statement</a></li>
 				<li>
 					<ol class="nav__ol">
-						<li><a href="#" class="nav__a">Example</a></li>
+						<li><a href="#block-example" class="nav__a">Example</a></li>
 					</ol>
 				</li>
-				<li><a href="#" class="nav__a">Conditional Statements</a></li>
+				<li><a href="#conditional" class="nav__a">Conditional Statements</a></li>
 				<li>
 					<ol class="nav__ol">
-						<li><a href="#" class="nav__a"><code>if...else</code> statements</a></li>
+						<li><a href="#if...else" class="nav__a"><code>if...else</code> statements</a></li>
 						<li>
 							<ol class="nav__ol">
-								<li><a href="#" class="nav__a">Falsy values</a></li>
-								<li><a href="#" class="nav__a">Example</a></li>
+								<li><a href="#falsy" class="nav__a">Falsy values</a></li>
+								<li><a href="#falsy-example" class="nav__a">Example</a></li>
 							</ol>
 						</li>
-						<li><a href="#" class="nav__a">Switch statement</a></li>
+						<li><a href="#switch" class="nav__a">Switch statement</a></li>
 						<li>
 							<ol class="nav__ol">
-								<li><a href="#" class="nav__a">Example</a></li>
+								<li><a href="#switch-example" class="nav__a">Example</a></li>
 							</ol>
 						</li>
-					</ol>
-				</li>
-
-				<li><a href="#" class="nav__a">Exception handling statements</a></li>
-
-				<li>
-					<ol class="nav__ol">
-						<li><a href="#" class="nav__a">Exception types</a></li>
-						<li><a href="#" class="nav__a"><code>Throw</code> statement</a></li>
-						<li><a href="#" class="nav__a"><code>try...catch</code> statement</a></li>
-						<li>
-							<ol class="nav__ol">
-								<li><a href="#" class="nav__a">The <code>catch</code> block</a></li>
-								<li><a href="#" class="nav__a">The <code>finally</code> block</a></li>
-								<li><a href="#" class="nav__a">Nesting <code>try...catch</code> statements</a></li>
-							</ol>
-						</li>
-						<li><a href="#" class="nav__a">Utilizing <code>Error</code> objects</a></li>
 					</ol>
 				</li>
 
-				<li><a href="#" class="nav__a">Promises</a></li>
+				<li><a href="#exception" class="nav__a">Exception handling statements</a></li>
 
 				<li>
 					<ol class="nav__ol">
-						<li><a href="#" class="nav__a">Loading an image with XHR</a></li>
+						<li><a href="#exception-types" class="nav__a">Exception types</a></li>
+						<li><a href="#throw" class="nav__a"><code>Throw</code> statement</a></li>
+						<li><a href="#try...catch" class="nav__a"><code>try...catch</code> statement</a></li>
+						<li>
+							<ol class="nav__ol">
+								<li><a href="#catch" class="nav__a">The <code>catch</code> block</a></li>
+								<li><a href="#finally" class="nav__a">The <code>finally</code> block</a></li>
+								<li><a href="#nesting-try...catch" class="nav__a">Nesting <code>try...catch</code> statements</a></li>
+							</ol>
+						</li>
+						<li><a href="#error" class="nav__a">Utilizing <code>Error</code> objects</a></li>
+					</ol>
+				</li>
+
+				<li><a href="#promises" class="nav__a">Promises</a></li>
+
+				<li>
+					<ol class="nav__ol">
+						<li><a href="#xhr" class="nav__a">Loading an image with XHR</a></li>
 					</ol>
 				</li>
 			</ol>
@@ -92,7 +92,7 @@
 			<p class="article__p">Any JavaScript expression is also a statement. See <a href="#">Expressions and operators</a> for complete information about expressions.</p>
 
 			<!-- Blocks Statement -->
-			<h3 class="article__h3--inverted">Block Statement</h3>
+			<h3 class="article__h3--inverted" id="block">Block Statement</h3>
 
 			<p class="article__p">The most basic statement is a block statement that is used to group statements. The block is delimited by a pair of curly brackets:</p>
 
@@ -108,7 +108,7 @@
 			<!-- end pre -->
 
 			<!-- Example -->
-			<h3 class="article__h3">Example</h3>
+			<h3 class="article__h3" id="block-example">Example</h3>
 			<p class="article__p">Block statements are commonly used with control flow statements (e.g. <span class="code__text">if</span>, <span class="code__text">for</span>, <span class="code__text">while</span>).</p>
 
 			<!-- pre -->
@@ -133,9 +133,9 @@ console.<span class="function">log</span><span class="punctuation">(</span>x<spa
 			<p class="article__p">Starting with <span class="code__text">ECMAScript2015</span>, the <span class="code__text"><a href="#">let</a></span> variable declaration is block scoped. See the let reference page for more information.</p>
 
 			<!-- Conditional Statements -->
-			<h3 class="article__h3--inverted">Conditional Statements</h3>
+			<h3 class="article__h3--inverted" id="conditional">Conditional Statements</h3>
 			<p class="article__p">A conditional statement is a set of commands that executes if a specified condition is true. JavaScript supports two conditional statements: <span class="code__text">if...else</span> and <span class="code__text">switch</span>.</p>
-			<h3 class="article__h3"><span class="code__text">if...else</span> statement</h3>
+			<h3 class="article__h3"><span class="code__text" id="if...else">if...else</span> statement</h3>
 			<p class="article__p">Use the <span class="code__text">if</span> statement to execute a statement if a logical condition is true. Use the optional <span class="code__text">else</span> clause to execute a statement if the condition is false. An <span class="code__text">if</span>				statement looks as follows:</p>
 
 			<!-- pre -->
@@ -191,7 +191,7 @@ console.<span class="function">log</span><span class="punctuation">(</span>x<spa
 }</span></pre>
 			<!-- end pre -->
 
-			<h3 class="article__h3">Falsy Values</h3>
+			<h3 class="article__h3" id="falsy">Falsy Values</h3>
 			<p class="article__p">The following values evaluate to false (also known as Falsy values):</p>
 			<ul class="article__ul code__text">
 				<li>false</li>
@@ -210,7 +210,7 @@ console.<span class="function">log</span><span class="punctuation">(</span>x<spa
 <span class="keyword">if</span> <span class="punctuation">(</span>b <span class="operator">==</span> <span class="keyword">true</span><span class="punctuation">) // this condition evaluates to false</span></pre>
 			<!-- end pre -->
 
-			<h3 class="article__h3">Example</h3>
+			<h3 class="article__h3" id="falsy-example">Example</h3>
 			<p class="article__p">In the following example, the function checkData returns true if the number of characters in a Text object is three; otherwise, it displays an alert and returns false.</p>
 			<!-- pre -->
 			<pre class="code code__example"><span class="keyword">function</span> <span class="function">checkData</span><span class="punctuation">() {</span>
@@ -224,7 +224,7 @@ console.<span class="function">log</span><span class="punctuation">(</span>x<spa
 }</span></pre>
 			<!-- end pre -->
 
-			<h3 class="article__h3"><span class="code__text">switch</span> statement</h3>
+			<h3 class="article__h3" id="switch"><span class="code__text">switch</span> statement</h3>
 			<p class="article__p">A <span class="code__text">switch</span> statement allows a program to evaluate an expression and attempt to match the expression's value to a case label. If a match is found, the program executes the associated statement. A switch statement looks
 				as follows:</p>
 			<!-- pre -->
@@ -246,7 +246,7 @@ console.<span class="function">log</span><span class="punctuation">(</span>x<spa
 				By convention, the <span class="code__text">default</span> clause is the last clause, but it does not need to be so.</p>
 			<p class="article__p">The optional break statement associated with each case clause ensures that the program breaks out of switch once the matched statement is executed and continues execution at the statement following switch. If break is omitted, the program continues
 				execution at the next statement in the switch statement.</p>
-			<h3 class="article__h3">Example</h3>
+			<h3 class="article__h3" id="switch-example">Example</h3>
 			<p class="article__p">In the following example, if <span class="code__text">fruittype</span> evaluates to "Bananas", the program matches the value with case "Bananas" and executes the associated statement. When <span class="code__text">break</span> is encountered, the program
 				terminates <span class="code__text">switch</span> and executes the statement following <span class="code__text">switch</span>. If <span class="code__text">break</span> were omitted, the statement for case "Cherries" would also be executed.</p>
 
@@ -276,14 +276,14 @@ console.<span class="function">log</span><span class="punctuation">(</span>x<spa
 console<span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span><span class="string">"Is there anything else you'd like?"</span><span class="punctuation">);</span></pre>
 			<!-- end pre-->
 
-			<h3 class="article__h3--inverted">Exception handling statements</h3>
+			<h3 class="article__h3--inverted" id="exception">Exception handling statements</h3>
 			<p class="article__p">You can throw exceptions using the throw statement and handle them using the try...catch statements.</p>
 			<ul class="article__ul">
 				<li><a href="#"><span class="code__text"> throw</span> statement</a></li>
 				<li><a href="#"><span class="code__text">try...catch</span> statement</a></li>
 			</ul>
 
-			<h3 class="article__h3">Exception types</h3>
+			<h3 class="article__h3" id="exception-types">Exception types</h3>
 			<p class="article__p">Just about any object can be thrown in JavaScript. Nevertheless, not all thrown objects are created equal. While it is fairly common to throw numbers or strings as errors it is frequently more effective to use one of the exception types specifically
 				created for this purpose:</p>
 			<ul class="article__ul">
@@ -291,7 +291,7 @@ console<span class="punctuation">.</span><span class="function">log</span><span 
 				<li><a href="#"><span class="code__text">DOMException</span> and <span class="code__text">DOMError</span></a></li>
 			</ul>
 
-			<h3 class="article__h3"><span class="code__text">throw</span> statement</h3>
+			<h3 class="article__h3" id="throw"><span class="code__text">throw</span> statement</h3>
 			<p class="article__p">Use the <span class="code__text">throw</span> statement to throw an exception. When you throw an exception, you specify the expression containing the value to be thrown:</p>
 			<pre class="code code__syntax">throw expression;</pre>
 			<p class="article__p">You may throw any expression, not just expressions of a specific type. The following code throws several exceptions of varying types:</p>
@@ -322,7 +322,7 @@ UserException.prototype.toString <span class="operator">=</span> <span class="ke
 <span class="keyword">throw new</span> UserException<span class="punctuation">(</span><span class="string">'Value too high'</span><span class="punctuation">);</span></pre>
 			<!-- end pre -->
 
-			<h3 class="article__h3"><span class="code__text">try...catch</span> statement</h3>
+			<h3 class="article__h3" id="try...catch"><span class="code__text">try...catch</span> statement</h3>
 			<p class="article__p">The <span class="code__text">try...catch</span> statement marks a block of statements to try, and specifies one or more responses should an exception be thrown. If an exception is thrown, the <span class="code__text">try...catch</span> statement catches
 				it.</p>
 			<p class="article__p">The <span class="code__text">try...catch</span> statement consists of a <span class="code__text">try</span> block, which contains one or more statements, and a <span class="code__text">catch</span> block, containing statements that specify what to
@@ -354,7 +354,7 @@ UserException.prototype.toString <span class="operator">=</span> <span class="ke
 </pre>
 			<!-- end pre -->
 
-			<h3 class="article__h3">The <span class="code__text">catch</span> block</h3>
+			<h3 class="article__h3" id="catch">The <span class="code__text">catch</span> block</h3>
 			<p class="article__p">You can use a <span class="code__text">catch</span> block to handle all exceptions that may be generated in the <span class="code__text">try</span> block.</p>
 			<!-- pre -->
 			<pre class="code code__syntax">catch (catchID) {
@@ -375,7 +375,7 @@ UserException.prototype.toString <span class="operator">=</span> <span class="ke
 }</span></pre>
 			<!-- end pre -->
 
-			<h3 class="article__h3">The <span class="code__text">finally</span> block</h3>
+			<h3 class="article__h3" id="finally">The <span class="code__text">finally</span> block</h3>
 			<p class="article__p">The <span class="code__text">finally</span> block contains statements to execute after the <span class="code__text">try</span> and <span class="code__text">catch</span> blocks execute but before the statements following the <span class="code__text">try...catch</span>				statement. The <span class="code__text">finally</span> block executes whether or not an exception is thrown. If an exception is thrown, the statements in the <span class="code__text">finally</span> block execute even if no <span class="code__text">finally</span>				block handles the exception.</p>
 			<p class="article__p">You can use the <span class="code__text">finally</span> block to make your script fail gracefully when an exception occurs; for example, you may need to release a resource that your script has tied up. The following example opens a file and then executes
 				statements that use the file (server-side JavaScript allows you to access files). If an exception is thrown while the file is open, the <span class="code__text">finally</span> block closes the file before the script fails.</p>
@@ -441,10 +441,10 @@ UserException.prototype.toString <span class="operator">=</span> <span class="ke
 // caught inner "bogus"</span></pre>
 			<!-- end pre -->
 
-			<h3 class="article__h3">Nesting try...catch statements</h3>
+			<h3 class="article__h3" id="nesting-try...catch">Nesting try...catch statements</h3>
 			<p class="article__p">You can nest one or more <span class="code__text">try...catch statements</span>. If an inner <span class="code__text">try...catch</span> statement does not have a <span class="code__text">catch</span> block, it needs to have a <span class="code__text">finally</span>				block and the enclosing <span class="code__text">try...catch</span> statement's <span class="code__text">catch</span> block is checked for a match. For more information, see <a href="#">nested try-blocks</a> on the <span class="code__text"><a href="#">try...catch</a></span>				reference page.</p>
 
-			<h3 class="article__h3">Utilizing <span class="code__text">Error</span> objects</h3>
+			<h3 class="article__h3" id="error">Utilizing <span class="code__text">Error</span> objects</h3>
 			<p class="article__p">Depending on the type of error, you may be able to use the 'name' and 'message' properties to get a more refined message. 'name' provides the general class of Error (e.g., 'DOMException' or 'Error'), while 'message' generally provides a more succinct
 				message than one would get by converting the error object to a string.</p>
 			<p class="article__p">If you are throwing your own exceptions, in order to take advantage of these properties (such as if your catch block doesn't discriminate between your own exceptions and system ones), you can use the Error constructor. For example:</p>
@@ -465,7 +465,7 @@ UserException.prototype.toString <span class="operator">=</span> <span class="ke
 }</span></pre>
 			<!-- end pre -->
 
-			<h3 class="article__h3--inverted">Promises</h3>
+			<h3 class="article__h3--inverted" id="promises">Promises</h3>
 			<p class="article__p">Starting with ECMAScript2015, JavaScript gains support for <span class="code-text">Promise</span> objects allowing you to control the flow of deferred and asynchronous operations.</p>
 			<p class="article__p">A <span class="code-text">Promise</span> is in one of these states:</p>
 			<ul class="article__ul-promises">
@@ -476,7 +476,7 @@ UserException.prototype.toString <span class="operator">=</span> <span class="ke
 			</ul>
 			<img src="images/promises.png" class="article__img" alt="A flowchart depicting differing states of a promise in JavaScript">
 
-			<h3 class="article__h3">Loading an image with XHR</h3>
+			<h3 class="article__h3" id="xhr">Loading an image with XHR</h3>
 			<p class="article__p">A simple example using <span class="code__text">Promise</span> and <a href="#">XMLHttpRequest</a> to load an image is available at the MDN GitHub <a href="#">js-examples repository</a>. You can also <a href="#">see it in action</a>. Each step is commented
 				and allows you to follow the Promise and XHR architecture closely. Here is the uncommented version, showing the <span class="code__text">Promise</span> flow so that you can get an idea:</p>
 			<!-- pre -->
