@@ -1,17 +1,17 @@
 .article {
+    flex: 1 1;
     font-size: 1rem;
-    margin-top: 1em;
-    max-width: 53em;
-    padding: 0 1.5em 1em;
-    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: 0 1em 1em;
     @media (min-width: 56em) {
       padding: 0 2em 1em;
     }
     @media (min-width: 63em) {
-      padding: 0 4em 1em;
+      padding: 0 3em 1em;
     }
     @media (min-width: 70em) {
-        padding: 0 6em 1em;
+      padding: 0 4em 1em;
     }
 
     // .article__summary
@@ -20,11 +20,12 @@
         border-image: linear-gradient(to right, $blue13, $blue4) 1;
         border-width: 0.3em 0;
         font-size: 1.2em;
-        margin-bottom: 1.8em;
+        margin: 1.8em 0;
         padding: 0.5em 0;
 
         @media (min-width: 56em) {
-            font-size: 1.5em;
+          margin-top: 0;
+          font-size: 1.5em;
         }
     }
 

@@ -12,7 +12,7 @@
 
   // When nav and article are displayed in a flex-row instead of flex-column
   @media (min-width: 56em) {
-    width: 22em;
+    flex: 0 0 22em;
   }
 
   // .nav__a
