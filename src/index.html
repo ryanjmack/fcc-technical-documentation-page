@@ -302,6 +302,45 @@ UserException.prototype.toString <span class="operator">=</span> <span class="ke
 			<p class="article__p">The <span class="code__text">try...catch</span> statement consists of a <span class="code__text">try</span> block, which contains one or more statements, and a <span class="code__text">catch</span> block, containing statements that specify what to do if an exception is thrown in the <span class="code__text">try</span> block. That is, you want the <span class="code__text">try</span> block to succeed, and if it does not succeed, you want control to pass to the <span class="code__text">catch</span> block. If any statement within the <span class="code__text">try</span> block (or in a function called from within the <span class="code__text">try</span> block) throws an exception, control immediately shifts to the <span class="code__text">catch</span> block. If no exception is thrown in the <span class="code__text">try</span> block, the <span class="code__text">catch</span> block is skipped. The <span class="code__text">finally</span> block executes after the <span class="code__text">try</span> and <span class="code__text">catch</span> blocks execute but before the statements following the <span class="code__text">try...catch</span> statement.</p>
 			<p class="article__p">The following example uses a <span class="code__text">try...catch</span> statement. The example calls a function that retrieves a month name from an array based on the value passed to the function. If the value does not correspond to a month number (1-12), an exception is thrown with the value <span class="code__text">"InvalidMonthNo"</span>"InvalidMonthNo" and the statements in the <span class="code__text">catch</span> block set the <span class="code__text">monthName</span> variable to <span class="code__text">unknown</span>.</p>
 
+			<!-- pre -->
+			<pre class="code code__example"><span class="keyword">function</span> <span class="function">getMonthName</span><span class="punctuation">(</span>mo<span class="punctuation">) {</span>
+  mo <span class="operator">=</span> mo <span class="operator">-</span> <span class="number">1</span><span class="punctuation">; // Adjust month number for array index (1 = Jan, 12 = Dec)</span>
+  <span class="keyword">var</span> months <span class="operator">=</span> <span class="punctuation">[</span><span class="string">'Jan'</span><span class="punctuation">,</span> <span class="string">'Feb'</span><span class="punctuation">,</span> <span class="string">'Mar'</span><span class="punctuation">,</span> <span class="string">'Apr'</span><span class="punctuation">,</span> <span class="string">'May'</span><span class="punctuation">,</span> <span class="string">'Jun'</span><span class="punctuation">,</span> <span class="string">'Jul'</span><span class="punctuation">,</span>
+                <span class="string">'Aug'</span><span class="punctuation">,</span> <span class="string">'Sep'</span><span class="punctuation">,</span> <span class="string">'Oct'</span><span class="punctuation">,</span> <span class="string">'Nov'</span><span class="punctuation">,</span> <span class="string">'Dec'</span><span class="punctuation">];</span>
+<span class="keyword">if</span> <span class="punctuation">(</span>months<span class="punctuation">[</span>mo<span class="punctuation">]) {</span>
+    <span class="keyword">return</span> months<span class="punctuation">[</span>mo<span class="punctuation">];
+  }</span> <span class="keyword">else</span> <span class="punctuation">{</span>
+    <span class="keyword">throw</span> <span class="string">'InvalidMonthNo'</span><span class="punctuation">; //throw keyword is used here
+  }
+}</span>
+
+<span class="keyword">try</span> <span class="punctuation">{ // statements to try</span>
+  monthName <span class="operator">=</span> <span class="function">getMonthName</span><span class="punctuation">(</span>myMonth<span class="punctuation">); // function could throw exception
+}</span>
+<span class="keyword">catch</span> <span class="punctuation">(</span>e<span class="punctuation">) {</span>
+  monthName <span class="operator">=</span> <span class="string">'unknown'</span><span class="punctuation">;</span>
+  <span class="function">logMyErrors</span><span class="punctuation">(</span>e<span class="punctuation">); // pass exception object to error handler -> your own function
+}</span>
+</pre>
+			<!-- end pre -->
+
+			<h3 class="article__h3">The <span class="code__text">catch</span> block</h3>
+			<p class="article__p">You can use a <span class="code__text">catch</span> block to handle all exceptions that may be generated in the <span class="code__text">try</span> block.</p>
+			<!-- pre -->
+			<pre class="code code__syntax">catch (catchID) {
+  statements
+}</pre>
+			<!-- end pre -->
+			<p class="article__p">The <span class="code__text">catch</span> block specifies an identifier (<span class="code__text">catchID</span> in the preceding syntax) that holds the value specified by the <span class="code__text">throw</span> statement; you can use this identifier to get information about the exception that was thrown. JavaScript creates this identifier when the <span class="code__text">catch</span> block is entered; the identifier lasts only for the duration of the <span class="code__text">catch</span> block; after the <span class="code__text">catch</span> block finishes executing, the identifier is no longer available.</p>
+			<p class="article__p">For example, the following code throws an exception. When the exception occurs, control transfers to the <span class="code__text">catch</span> block.</p>
+			<!-- pre -->
+			<pre class="code code__example"><span class="keyword">try</span> <span class="punctuation">{</span>
+  <span class="keyword">throw</span> <span class="string">'myException'</span><span class="punctuation">; // generates an exception
+}</span>
+<span class="keyword">catch</span> <span class="punctuation">(</span>e<span class="punctuation">) {
+  // statements to handle any exceptions</span>
+  <span class="function">logMyErrors</span><span class="punctuation">(</span>e<span class="punctuation">); // pass exception object to error handler
+}</span></pre>
 		</article>
 	</main>
 </body>
