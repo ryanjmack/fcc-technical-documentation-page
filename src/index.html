@@ -410,6 +410,36 @@ UserException.prototype.toString <span class="operator">=</span> <span class="ke
 			<h3 class="article__h3">Nesting try...catch statements</h3>
 			<p class="article__p">You can nest one or more <span class="code__text">try...catch statements</span>. If an inner <span class="code__text">try...catch</span> statement does not have a <span class="code__text">catch</span> block, it needs to have a <span class="code__text">finally</span> block and the enclosing <span class="code__text">try...catch</span> statement's <span class="code__text">catch</span> block is checked for a match. For more information, see <a href="#">nested try-blocks</a> on the <span class="code__text"><a href="#">try...catch</a></span> reference page.</p>
 
+			<h3 class="article__h3">Utilizing <span class="code__text">Error</span> objects</h3>
+			<p class="article__p">Depending on the type of error, you may be able to use the 'name' and 'message' properties to get a more refined message. 'name' provides the general class of Error (e.g., 'DOMException' or 'Error'), while 'message' generally provides a more succinct message than one would get by converting the error object to a string.</p>
+			<p class="article__p">If you are throwing your own exceptions, in order to take advantage of these properties (such as if your catch block doesn't discriminate between your own exceptions and system ones), you can use the Error constructor. For example:</p>
+			<!-- pre -->
+			<pre class="code code__example"><span class="keyword">function</span> <span class="function">doSomethingErrorProne</span><span class="punctuation">() {</span>
+  <span class="keyword">if</span> <span class="punctuation">(</span><span class="function">ourCodeMakesAMistake</span><span class="punctuation">()) {</span>
+    <span class="keyword">throw </span><span class="punctuation">(</span><span class="keyword">new</span> Error<span class="punctuation">(</span><span class="string">'The message'</span><span class="punctuation">));
+  }</span> <span class="keyword">else</span> <span class="punctuation">{</span>
+    <span class="function">doSomethingToGetAJavascriptError</span><span class="punctuation">();
+  }
+}
+....</span>
+<span class="keyword">try</span> <span class="punctuation">{</span>
+  <span class="function">doSomethingErrorProne</span><span class="punctuation">();
+}</span> <span class="keyword">catch</span> <span class="punctuation">(</span>e<span class="punctuation">) {</span>
+  console<span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span>e<span class="punctuation">.</span>name<span class="punctuation">); // logs 'Error'</span>
+  console<span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span>e<span class="punctuation">.</span>message<span class="punctuation">); // logs 'The message' or a JavaScript error message)
+}</span></pre>
+			<!-- end pre -->
+
+			<h3 class="article__h3--inverted">Promises</h3>
+			<p class="article__p">Starting with ECMAScript2015, JavaScript gains support for <span class="code-text">Promise</span> objects allowing you to control the flow of deferred and asynchronous operations.</p>
+			<p class="article__p">A <span class="code-text">Promise</span> is in one of these states:</p>
+			<ul class="article__ul-promises">
+				<li><i>pending</i>: initial state, not fulfilled or rejected.</li>
+				<li><i>fulfilled</i>: successful operation</li>
+				<li><i>rejected</i>: failed operation.</li>
+				<li><i>settled</i>: the Promise is either fulfilled or rejected, but not pending.</li>
+			</ul>
+			<img src="images/promises.png" class="article__img" alt="A flowchart depicting differing states of a promise in JavaScript">
 		</article>
 	</main>
 </body>

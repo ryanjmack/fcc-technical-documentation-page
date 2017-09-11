@@ -33,6 +33,11 @@
       font-size: 1em;
     }
 
+    &__img {
+      margin: 2em 0;
+      width: 100%;
+    }
+
     // .article__h3
     &__h3 {
         display: inline-block;
@@ -65,6 +70,15 @@
       li {
         padding-top: 0.3em;
         padding-bottom: 0.3em;
+      }
+
+      // .article__ul-promises
+      &-promises {
+        font-family: 'Open Sans', sans-serif;
+
+        li {
+          padding: 0.1em 0;
+        }
       }
     }
 }
