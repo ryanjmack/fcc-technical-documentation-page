@@ -96,7 +96,7 @@
 			<p class="article__p">Block statements are commonly used with control flow statements (e.g. <span class="code__text">if</span>, <span class="code__text">for</span>, <span class="code__text">while</span>).</p>
 
 			<!-- pre -->
-			<pre class="code code__example"><span class="keyword">while</span><span class="punctuation"> (</span>x <span class="operator"><</span> <span class="number">10</span><span class="punctuation">) {</span>
+			<pre class="code code__example"><span class="keyword">while</span><span class="punctuation"> (</span>x <span class="operator"></span> <span class="number">10</span><span class="punctuation">) {</span>
   x<span class="operator">++</span><span class="punctuation">;
 }</span></pre>
 			<!-- end pre -->
@@ -294,7 +294,7 @@ UserException.prototype.toString <span class="operator">=</span> <span class="ke
 }
 
 // Create an instance of the object type and throw it</span>
-<span class="keyword">throw new</span> UserException<span class="punctuation">(</span><span class="string">'Value too high'</span><span class="punctuation">);</spn></pre>
+<span class="keyword">throw new</span> UserException<span class="punctuation">(</span><span class="string">'Value too high'</span><span class="punctuation">);</span></pre>
 			<!-- end pre -->
 
 			<h3 class="article__h3"><span class="code__text">try...catch</span> statement</h3>
@@ -369,7 +369,7 @@ UserException.prototype.toString <span class="operator">=</span> <span class="ke
                  // until finally block has completed</span>
     console<span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span><span class="number">2</span><span class="punctuation">); // not reachable
   }</span> <span class="keyword">finally</span> <span class="punctuation">{</span>
-    console<span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span><span class="number">3</span></span><span class="punctuation">);</span>
+    console<span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span><span class="number">3</span><span class="punctuation">);</span>
     <span class="keyword">return false</span><span class="punctuation">; // overwrites the previous "return"</span>
     console<span class="punctuation">.</span><span class="function">log</span><span class="punctuation">(</span><span class="number">4</span><span class="punctuation">); // not reachable
   }
@@ -440,6 +440,32 @@ UserException.prototype.toString <span class="operator">=</span> <span class="ke
 				<li><i>settled</i>: the Promise is either fulfilled or rejected, but not pending.</li>
 			</ul>
 			<img src="images/promises.png" class="article__img" alt="A flowchart depicting differing states of a promise in JavaScript">
+
+			<h3 class="article__h3">Loading an image with XHR</h3>
+			<p class="article__p">A simple example using <span class="code__text">Promise</span> and <a href="#">XMLHttpRequest</a> to load an image is available at the MDN GitHub <a href="#">js-examples repository</a>. You can also <a href="#">see it in action</a>. Each step is commented and allows you to follow the Promise and XHR architecture closely. Here is the uncommented version, showing the <span class="code__text">Promise</span> flow so that you can get an idea:</p>
+			<!-- pre -->
+			<pre class="code code__example"><span class="keyword">function</span> <span class="function">imgLoad</span><span class="punctuation">(</span>url<span class="punctuation">) {</span>
+  <span class="keyword">return new</span> Promise<span class="punctuation">(</span><span class="keyword">function</span><span class="punctuation">(</span>resolve<span class="punctuation">,</span> reject<span class="punctuation">) {</span>
+    <span class="keyword">var</span> request <span class="operator">=</span> <span class="keyword">new</span> XMLHttpRequest<span class="punctuation">();</span>
+    request<span class="punctuation">.</span><span class="function">open</span><span class="punctuation">(</span><span class="string">'GET'</span><span class="punctuation">,</span> url<span class="punctuation">);</span>
+    request<span class="punctuation">.</span>responseType <span class="operator">= </span><span class="string">'blob'</span><span class="punctuation">;</span>
+    request<span class="punctuation">.</span>onload <span class="operator">=</span> <span class="keyword">function</span><span class="punctuation">() {</span>
+      <span class="keyword">if</span> <span class="punctuation">(</span>request<span class="punctuation">.</span>status <span class="operator">===</span> <span class="number">200</span><span class="punctuation">) {</span>
+        <span class="function">resolve</span><span class="punctuation">(</span>request<span class="punctuation">.</span>response<span class="punctuation">);
+      }</span> <span class="keyword">else</span> <span class="punctuation">{</span>
+        <span class="function">reject</span><span class="punctuation">(</span><span class="function">Error</span><span class="punctuation">(</span><span class="string">'Image didn\'t load successfully; error code:'</span>
+                     <span class="operator">+</span> request<span class="punctuation">.</span>statusText<span class="punctuation">));
+      }
+    };</span>
+    request<span class="punctuation">.</span>onerror <span class="operator">=</span> <span class="keyword">function</span><span class="punctuation">() {</span>
+      <span class="function">reject</span><span class="punctuation">(</span><span class="function">Error</span><span class="punctuation">(</span><span class="string">'There was a network error.'</span><span class="punctuation">));
+    };</span>
+    request<span class="punctuation">.</span><span class="function">send</span><span class="punctuation">();
+  });
+}</span></pre>
+			<!-- end pre -->
+			<p class="article__p">For more detailed information, see the <span class="code__text">Promise</span> reference page and the <a href="#">Using Promises</a> guide.</p>
+
 		</article>
 	</main>
 </body>
