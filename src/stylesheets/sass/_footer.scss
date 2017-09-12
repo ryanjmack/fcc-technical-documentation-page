@@ -1,0 +1,16 @@
+.footer {
+  align-items: center;
+  background-color: $text;
+  color: white;
+  display: flex;
+  font: {
+    family: 'Open Sans', sans-serif;
+    size: 1rem;
+  }
+  justify-content: flex-start;
+  padding: 5em 1.5em;
+
+  a {
+    color: $blue8;
+  }
+}
