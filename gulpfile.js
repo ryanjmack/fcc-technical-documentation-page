@@ -88,7 +88,7 @@ gulp.task('useref', function() {
     // Minifies only if it's a CSS file, also fix url paths for background images
     .pipe(gulpIf('*.css', cssnano({
             discardComments: {removeAll: true}
-        })).pipe(replace('../../images', '../images')))
+        })))
 
     .pipe(gulp.dest('build'))
 });
