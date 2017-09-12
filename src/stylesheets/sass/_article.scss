@@ -67,6 +67,7 @@
     &__ul {
       @extend .code__text;
       background-color: white;
+      padding-left: 2.5em;
 
       .sans-serif {
         font-size: 1rem;
