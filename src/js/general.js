@@ -9,13 +9,13 @@
     target.addEventListener('click', function() {
         if (navList.style.display === 'block') {
             navList.style.display = 'none';
-            target.classList.add('fa-arrow-right');
-            target.classList.remove('fa-arrow-down');
+            target.classList.add('icon-right');
+            target.classList.remove('icon-down');
         }
         else {
             navList.style.display = 'block';
-            target.classList.add('fa-arrow-down');
-            target.classList.remove('fa-arrow-right');
+            target.classList.add('icon-down');
+            target.classList.remove('icon-right');
         }
     });
 }());

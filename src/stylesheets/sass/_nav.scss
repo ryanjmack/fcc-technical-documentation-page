@@ -33,27 +33,25 @@
 
   // .nav__h2
   &__h2 {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
     font: {
       family: inherit;
       size: inherit;
     }
     margin: 0;
-    position: relative;
+    padding: 0 1em;
 
-    // .nav__h2 .fa
-    // This will be the toggle for the navigation for mobile
-    // has an id of nav-toggle
-    .fa {
-      bottom: -0.5em;
-      position: absolute;
-      padding: 1em;
-      right: 0;
 
-      // disable toggle button when container becomes large enough
-      @media (min-width: 56em) {
-        display: none;
+
+    // disable toggle button when container becomes large enough
+    @media (min-width: 56em) {
+      padding: 0;
+      i {
+          display: none;
+        }
       }
-    }
   }
 
   // .nav__ol

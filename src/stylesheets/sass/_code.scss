@@ -23,7 +23,7 @@
             border-color: $danger-border;
             position: relative;
 
-            .fa-frown-o {
+            .icon-frown {
                 color: $danger-frown;
                 bottom: 0.5em;
                 position: absolute;
@@ -55,9 +55,9 @@
       position: relative;
 
       & i {
-        left: 1em;
+        left: 0.7em;
         position: absolute;
-        top: 1em;
+        top: 0.8em;
         transform: rotate(180deg) scaleX(-1);
       }
     }
