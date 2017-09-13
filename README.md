@@ -1,4 +1,4 @@
-# freeCodeCamp Landing Page Project
+# freeCodeCamp Technical Documentation Project
 
 ## Synopsis
 
@@ -6,7 +6,7 @@ This is a project based off of freeCodeCamp's Responsive Web Design: 'Technical 
 
 ## Code Example
 
-You can check it out [here](https://ryanjmack.github.io/fcc-technical-documentation/)!
+You can check it out [here](https://ryanjmack.github.io/fcc-technical-documentation-page/)!
 
 ## Motivation
 
